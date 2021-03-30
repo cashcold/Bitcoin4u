@@ -1,0 +1,90 @@
+.home_1 h1 span{
+    font-weight: bold;
+    
+}
+.home_1 h1 {
+    font-size: 4rem;
+
+}
+.homeNow{
+    padding-top: 2em;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    background-color: #0C0F3D;
+}
+.home__text{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.btn-getStart{
+    background-color: #EA4263;
+    color: white;
+    padding: 1.5rem 6.2rem;
+    border-radius: 50px;
+}
+.playstore img{
+    width: 60%;
+    margin-right: 0em;
+}
+.playstore {
+    margin-right: 0em;
+}
+
+.payment_method img{
+    width: 70%;
+}
+.payment_method h1,.pay h3{
+    color: #f7931a;
+}
+.playstore{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 4em;
+}
+.playstore h1,h3,h3{
+    margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 768px){
+    .home_1 h1 span{
+        font-weight: bold;
+        
+    }
+    .home_1 h1 {
+        font-size: 2rem;
+    
+    }
+    .homeNow{
+        padding-top: 2em;
+        min-height: 70vh;
+        background-color: #0C0F3D;
+    }
+    .home__text{
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    .btn-getStart{
+        background-color: #EA4263;
+        color: white;
+        padding: 1rem 3.2rem;
+        border-radius: 50px;
+    }
+    .playstore img{
+        width: 100%;
+        margin: 0.5em;
+    }
+    .playstore {
+        margin-right: 1em;
+    }
+    .playstore{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+   .playLogo {
+       padding: 0em 3em;
+       margin-left: 5em;
+   }
+   .pay{
+       margin-top: 4em;
+   }
+}

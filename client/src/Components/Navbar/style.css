@@ -1,0 +1,136 @@
+.navMain{
+    width: 100%;
+    /* background-image: url('../../images/5039684.jpg');
+    background-position: center;
+    background-size: cover; */
+    
+    background-attachment: fixed;
+}
+.navMain nav{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-right: 10em;
+    padding-top: 2em;
+    min-height: 25vh;
+    background-color:#0C0F3D;
+    position: relative;
+}
+.links{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    margin-top: 1.5em;
+    grid-gap: 10px;
+}
+.logoImg h1{
+    color: white;
+    /* background-color: #EA4263;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #d4e20a 0%, #ff1010 100%);; */
+    font-size: 2rem;
+}
+.btn-join-us{
+    background-color: #f7931a; 
+}
+.btn-login-in{
+    margin: 0 1em;
+}
+.toggle__bar{
+    display: none;
+    margin-top: -1em;
+}
+.logoImg:hover{
+    cursor: pointer;
+}
+.toggle__bar div{
+    background-color: #F3A900;
+    width: 30px;
+    height: 5px;
+    margin: 4px 0;
+}
+.togglo__dash{
+    display: none;
+}
+.dash__both{
+    display: flex;
+}
+.logoImg h1{
+    color: #f7931a;
+}
+
+a:hover{
+    padding-bottom: 1px solid white;
+    color:  #f7931a;
+}
+.h1_bitcoin4u{
+    font-size: 7rem;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .links{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 10px;
+        margin-top: 3em;
+        margin-left: 5em;
+    }
+    .logoImg h1{
+        font-size: 1.5rem;
+        display: flex;
+    }
+    .logoImg h1{
+        margin-left: 1em;
+    }
+    .toggle__bar{
+        display: block;
+        position: absolute;
+        top: 3em;
+        right: 1em;
+    color: white;
+    background-color: blue;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(to bottom, #d4e20a 0%, #ff1010 100%);;
+    }
+    .nav__links{
+        display: none;
+    }
+    .navMain nav{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding-right: 10em;
+        padding-top: 2em;
+        min-height: 8vh;
+        position: relative;
+    }
+    .dash__both{
+    display: flex;
+    flex-direction: column;
+    }
+    .btn-login-in_account{
+        margin-bottom: 1em;
+    }
+    .h1_bitcoin4u{
+        font-size: 3rem;
+    }
+    
+}
+@media screen and (max-width: 500px){
+
+}
