@@ -1,0 +1,40 @@
+.footer__box{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.footer__main{
+    background-color: black;
+    min-height: 80vh;
+    margin-top: -5em;
+}
+.footer__box{
+    padding-top: 5em;
+}
+.footerBox ul li{
+    padding: 0.9em 0;
+}
+.footer__main span{
+    font-weight: bold;
+    color: #f7931a;
+}
+.collabo i,.social_icons i{
+    padding: 0 0.5em;
+    margin: 1em 0;
+}
+.lastFooter{
+    padding: 4em 0;
+}
+
+@media screen and (max-width: 768px){
+    .footer__box{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .footerBox ul li{
+        padding: 0.6em 0;
+    }
+    .collabo i,.social_icons i{
+        padding: 0 0.2em;
+        margin: 0.1em 0;
+    }
+}

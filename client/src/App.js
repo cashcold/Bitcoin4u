@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './Components/Navbar/navbar';
 import './App.css'
 import HomeMain from './Components/Home/home';
+import Footer from './Components/Footer/footer';
 
 class MainApp extends Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class MainApp extends Component {
                               <Route path='/' exact component={HomeMain}/> W
                            </Switch>
                         </div>
+                        <Footer/>
                 </div>
             </Router>
          );

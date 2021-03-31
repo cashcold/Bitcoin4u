@@ -1,5 +1,7 @@
-.home_1 h1 span{
+.home_1 h1 span,.both__flow span,.bit4u__box span,.great__work__head span,.contextInfo span,.contextInfo_mail span{
     font-weight: bold;
+    
+    color: #f7931a;
     
 }
 .home_1 h1 {
@@ -45,6 +47,97 @@
     margin: 1.5rem 0;
 }
 
+.home__text span{
+    color: #f7931a;
+}
+.subHead h1{
+    width: 40%;
+    padding-bottom: 1em;
+    margin: 0 auto;
+}
+.bothHead{
+    margin: 8em 0;
+}
+.payment_method span,.pay span{
+    color: white;
+    font-weight: bold;
+}
+.moreInfo{
+    padding-top: 3em;
+    min-height: 100vh;
+    background-color: #044E97;
+    padding-bottom: 4em;
+}
+.info__head span{
+    color: #f7931a;
+    font-weight: bold;
+}
+    .both__flow{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+.both__flow img{
+    width: 60%;
+}
+.flowNow h3{
+    width: 70%;
+    margin: auto;
+}
+.flow__box{
+   
+    /* margin-left: 8em; */
+    margin-bottom: 6em;
+}
+.both__flow{
+    margin: 5em 0;
+}
+.flowNow hr{
+    width: 30%;
+    margin:  0 auto;
+}
+.great__work{
+    min-height: 100vh;
+    background-color: #02274B;
+    padding-top: 1em;
+    padding-bottom: 4em;
+}
+.great__work__head{
+    margin-top: 4em;
+}
+.aboutBitcoin4u{
+    margin: 6em 0;
+}
+.bit4u__box p{
+    margin: 0 ;
+    padding: 0;
+}
+.bit4u__box {
+    width: 60%;
+    margin: 0 auto;
+}
+.bit4u__box i{
+    color:#f7931a; 
+}
+.aboutBitcoin4u{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 5em;
+}
+.contect__info{
+    min-height: 50vh;
+    background-color: #004489;
+    padding-top: 1em;
+}
+.contextInfo{
+    margin-top: 5em;
+}
+.contextInfo_mail{
+    margin: 5em 0;
+    padding-bottom: 8em;
+}
+
+
+
 @media screen and (max-width: 768px){
     .home_1 h1 span{
         font-weight: bold;
@@ -81,10 +174,32 @@
         grid-template-columns: repeat(1,1fr);
     }
    .playLogo {
-       padding: 0em 3em;
+       padding: 0em 2em;
        margin-left: 5em;
    }
    .pay{
        margin-top: 4em;
    }
+   .payment_method img{
+    width: 100%;
+   padding: 0 1em;
+    }
+    .both__flow{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 3em;
+    }
+    .both__flow{
+        margin: 2em 0;
+    }
+    .flow__box{
+   
+        /* margin-left: 8em; */
+        margin-bottom: 2em;
+    }
+    .aboutBitcoin4u{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 5em;
+    }
 }
