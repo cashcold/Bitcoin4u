@@ -6,8 +6,9 @@ class HomeMain extends Component {
         this.state = {  }
     }
     componentDidMount(){
-           
-    const Typing = ()=>{
+            
+
+        const Typing = ()=>{
         const typedTextSpan = document.querySelector(".typed-text");
         const cursorSpan = document.querySelector(".cursor");
 

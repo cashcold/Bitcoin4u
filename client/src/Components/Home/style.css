@@ -19,7 +19,7 @@
     font-weight: bold;
 }
 .btn-getStart{
-    background-color: #EA4263;
+    background-color:  #f7931a;
     color: white;
     padding: 1.5rem 6.2rem;
     border-radius: 50px;
@@ -135,6 +135,10 @@
     margin: 5em 0;
     padding-bottom: 8em;
 }
+.homeNow{
+    padding-top: 15em;
+}
+
 
 
 
@@ -202,4 +206,8 @@
         grid-template-columns: repeat(1,1fr);
         grid-gap: 5em;
     }
+    .homeNow{
+        padding-top: 10em;
+    }
+    
 }

@@ -9,6 +9,12 @@ class Navbar extends Component {
          }
     }
     componentDidMount(){
+        window.addEventListener('scroll',()=>{
+            const header = document.querySelector('.navMain')
+            header.classList.toggle('sticky',window.scrollY > 0);
+        })
+
+
         if(sessionStorage.getItem('x-access-token') != null)  {
             this.setState({
                 isLogin: true,
