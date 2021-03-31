@@ -22,9 +22,8 @@
     box-shadow: 0 5px  20px rgba(0,0,0,0.5);
     
  }
- .navMain.sticky.links a{
+ .navMain.sticky li a{
     color:  #f7931a;
-     background-color: #d80d0d;
      box-shadow: 0 5px  20px rgba(0,0,0,0.5);
     
  }
