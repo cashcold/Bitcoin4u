@@ -1,0 +1,22 @@
+.about__main{
+    padding: 20em;
+    min-height: 100vh;
+    background-color: #0B3E74;
+}
+.about_head h1{
+    font-size: 4rem;
+}
+.about_head span{
+    font-weight: bold;
+    color: #f7931a;
+}
+.about_head p{
+    padding-top: 2em;
+    line-height: 1.3em;
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+.about_head{
+    padding-bottom: 5em;
+}

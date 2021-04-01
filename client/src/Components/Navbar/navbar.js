@@ -67,8 +67,7 @@ class Navbar extends Component {
                        <div className='nav__links animate__animated animate__slower animate__bounceInDown'>
                            <ul className='links'>
                                <li><a href='/'>HOME </a></li>
-                               <li><a href='/about-us'>BUY</a></li>
-                               <li><a href='/about-us'>SELL</a></li>
+                               <li><a href='/'>BUY/SELL</a></li>
                                <li><a href='/about-us'>ABOUT US</a></li>
                                <li><a href='/FQA'>FAQ</a></li>
                                <li><a href='/contact-us'>SUPPORT</a></li>

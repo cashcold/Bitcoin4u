@@ -59,7 +59,11 @@ class HomeMain extends Component {
             <div className='home__main'>
                 <div className="">
                     <section className='homeNow'>
-                       
+                       <div className="mainbox"> 
+                            <div className="box_1"></div>
+                            <div className="box_1"></div>
+                            <div className="box_1"></div>
+                       </div>
                         <div className="home_1">
                             <h1><span>Buy</span> and <span>sell</span> cryptocurrency<br/> the <span>best</span> price, with no <span>hidden</span> fees.</h1>
                         </div>

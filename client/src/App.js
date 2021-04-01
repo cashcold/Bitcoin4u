@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar/navbar';
 import './App.css'
 import HomeMain from './Components/Home/home';
 import Footer from './Components/Footer/footer';
+import AboutMain from './Components/About-us/about';
 
 class MainApp extends Component {
     constructor(props) {
@@ -21,7 +22,8 @@ class MainApp extends Component {
                         <Navbar/>
                         <div className='router'>
                            <Switch>
-                              <Route path='/' exact component={HomeMain}/> W
+                              <Route path='/' exact component={HomeMain}/> 
+                              <Route path='/about-us' exact component={AboutMain}/> 
                            </Switch>
                         </div>
                         <Footer/>
