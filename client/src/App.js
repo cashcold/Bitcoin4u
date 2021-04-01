@@ -6,6 +6,8 @@ import './App.css'
 import HomeMain from './Components/Home/home';
 import Footer from './Components/Footer/footer';
 import AboutMain from './Components/About-us/about';
+import FAQ_Main from './Components/Faq\'s/faq\'s';
+import ContactMain from './Components/Contact-us/contact-us';
 
 class MainApp extends Component {
     constructor(props) {
@@ -24,6 +26,8 @@ class MainApp extends Component {
                            <Switch>
                               <Route path='/' exact component={HomeMain}/> 
                               <Route path='/about-us' exact component={AboutMain}/> 
+                              <Route path='/FAQS' exact component={FAQ_Main}/> 
+                              <Route path='/contact-us' exact component={ContactMain}/> 
                            </Switch>
                         </div>
                         <Footer/>

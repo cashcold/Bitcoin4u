@@ -69,7 +69,7 @@ class Navbar extends Component {
                                <li><a href='/'>HOME </a></li>
                                <li><a href='/'>BUY/SELL</a></li>
                                <li><a href='/about-us'>ABOUT US</a></li>
-                               <li><a href='/FQA'>FAQ</a></li>
+                               <li><a href='/FAQS'>FAQ</a></li>
                                <li><a href='/contact-us'>SUPPORT</a></li>
                                 <a href='/login' className='btn btn-success btn-login-in'>Login</a> 
                                 <a href='/register' className='btn btn-join-us'>Register</a> 

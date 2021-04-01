@@ -1,0 +1,27 @@
+.faqs__main{
+    padding: 20em 0;
+    min-height: 100vh;
+    background-color:#0C0F3D;
+}
+.mainfaq__box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 4em;
+    padding: 8em 0;
+}
+.faqs__box{
+    padding: 3em 0;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 10vh;
+    background-color: #044E97
+}
+.faqs__box h1{
+    color: #f7931a;
+}
+.faqSection span{
+    color: #f7931a;
+}
+.faqs__box ul li{
+    padding: 2em 0;
+}

@@ -12,7 +12,7 @@ class HomeMain extends Component {
         const typedTextSpan = document.querySelector(".typed-text");
         const cursorSpan = document.querySelector(".cursor");
 
-        const textArray = ["Bitcoin","What is Bitcoin mining?","The Must leading  cryptocurrency In Market","Where and how can we safely invest in Bitcoin today?","How much is a bitcoin worth? How and who determines its price?","Bitcoin as money","Bitcoin as a means of payment","Knowing how to invest in Bitcoin safely is not difficult at all if you have some basic recommendations in mind to do so",""];
+        const textArray = ["Bitcoin","What is Bitcoin mining?","The Must leading  cryptocurrency In Market","Where and how can we safely invest in Bitcoin today?","Bitcoin4u Is The Best Place To Buy Bitcoin and Invest","How much is a bitcoin worth? How and who determines its price?","Bitcoin as money","Bitcoin as a means of payment","Knowing how to invest in Bitcoin safely is not difficult at all if you have some basic recommendations in mind to do so",""];
         const typingDelay = 200;
         const erasingDelay = 100;
         const newTextDelay = 2000; // Delay between current and next text
