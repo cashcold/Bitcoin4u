@@ -32,8 +32,7 @@ class ContactMain extends Component {
                                 <div className='supportInfo'>
                                 <h1><i class="fas fa-address-card fa-3x"></i></h1>
                                     <h4><span>ADDRESS</span> LINE</h4>
-                                    <p>State: Tema</p>
-                                    <p>City: Accra</p>
+                                    <p>City: Accra Tema</p>
                                     <p> Tema Comm. 10 SOS, 114 Apple avneu</p>
                                 </div>
                             </div>  

@@ -14,7 +14,8 @@
     width: 80%;
     margin: 0 auto;
     min-height: 10vh;
-    background-color: #044E97
+    background-color:#060826;
+    box-shadow: 0 5px  5px rgba(255, 196, 0, 0.5);
 }
 .faqs__box h1{
     color: #f7931a;

@@ -8,6 +8,9 @@ import Footer from './Components/Footer/footer';
 import AboutMain from './Components/About-us/about';
 import FAQ_Main from './Components/Faq\'s/faq\'s';
 import ContactMain from './Components/Contact-us/contact-us';
+import DigitalCurrency from './Components/FAQS-Router/DigitalCurrency';
+import TypeDigitalCurrency from './Components/FAQS-Router/typeDigital';
+import GetCurrency from './Components/FAQS-Router/GetCurrency';
 
 class MainApp extends Component {
     constructor(props) {
@@ -28,6 +31,9 @@ class MainApp extends Component {
                               <Route path='/about-us' exact component={AboutMain}/> 
                               <Route path='/FAQS' exact component={FAQ_Main}/> 
                               <Route path='/contact-us' exact component={ContactMain}/> 
+                              <Route path='/digitalcurrency' exact component={DigitalCurrency}/> 
+                              <Route path='/typedigitalcurrency' exact component={TypeDigitalCurrency}/> 
+                              <Route path='/getcurrency' exact component={GetCurrency}/> 
                            </Switch>
                         </div>
                         <Footer/>

@@ -17,9 +17,9 @@ class FAQ_Main
                     <div className="faqs__box">
                         <h1>Introduction of Digital Currencies</h1>
                         <ul>
-                            <li><a href=''>1. What is Digital Currency ?</a></li>
-                            <li><a href=''>2. Types of Digital Currencies.</a></li>
-                            <li><a href=''>3. How to get different types of digital currencies</a></li>
+                            <li><a href='/digitalcurrency'>1. What is Digital Currency ?</a></li>
+                            <li><a href='/typedigitalcurrency'>2. Types of Digital Currencies.</a></li>
+                            <li><a href='/getcurrency'>3. How to get different types of digital currencies</a></li>
                             <li><a href=''>4. How to use ecurrency4u to buy and sell Digital Currencies</a></li>
                         </ul>
                     </div>
