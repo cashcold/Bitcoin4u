@@ -64,6 +64,26 @@ class GetCurrency extends Component {
                         <br/>
                         Would you like to use your old bitcoin address again? No problem! Each address on which you’ve previously received bitcoin, can be used again. It doesn’t matter if someone sends coins to your most recent address or to your oldest address- the bitcoins will arrive in the same wallet. In most wallets all generated addresses can be found in the transaction history.
                     </p> 
+                    <p>
+                        <h1><span>Please</span> note!</h1>
+                        For receiving as well as sending bitcoin, always copy and paste the receiving address. This lowers the risk of making a mistake. Don’t write or type the address. All cryptocurrency transactions are irreversible; once the coins have been sent, there’s no way of getting them back.
+                        <br/>
+                    </p> 
+                    <p>
+                        <h1>How do I <span>receive</span> or send bitcoin?</h1>
+                        When buying or receiving bitcoin, you use the receiving address from your wallet. We can’t emphasise it enough: copy and paste this address, do not write or type it. A bitcoin receiving address is similar to your personal bank account number on which you receive your bitcoin. But where do you find your bitcoin receiving address?
+                        <br/>
+                    </p> 
+                    <p>
+                        <h1>The receiving <span>address</span></h1>
+                        First, log into your wallet. In most wallets, the receiving address can be found under the button ‘Receive’. There are wallets in which a bitcoin receiving address will automatically change once it has been used for a transaction. This is in consideration of your privacy. But don’t worry: ‘old’ receiving addresses will always stay valid and linked to your wallet.
+                        <br/>
+                    </p> 
+                    <p>
+                        <h1>The receiving <span>address</span></h1>
+                        First, log into your wallet. In most wallets, the receiving address can be found under the button ‘Receive’. There are wallets in which a bitcoin receiving address will automatically change once it has been used for a transaction. This is in consideration of your privacy. But don’t worry: ‘old’ receiving addresses will always stay valid and linked to your wallet.
+                        <br/>
+                    </p> 
                 </section>
                 <section className='hlogo'>
                 <div className='logoImg animate__animated animate__slower animate__flash'>
