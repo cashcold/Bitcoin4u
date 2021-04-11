@@ -59,19 +59,19 @@ class HomeMain extends Component {
             <div className='home__main'>
                 <div className="">
                     <section className='homeNow'>
-                       <div className="mainbox"> 
-                            <div className="box_1"></div>
-                            <div className="box_1"></div>
-                            <div className="box_1"></div>
-                       </div>
+                    
                         <div className="home_1">
                             <h1><span>Buy</span> and <span>sell</span> cryptocurrency<br/> the <span>best</span> price, with no <span>hidden</span> fees.</h1>
                         </div>
+
+                        {/* <div className="exchangeRate">
+                        <fxwidget-cc className="exchangeRate__now" amount="1" decimals="2" large="true" shadow="true" symbol="true" grouping="true" border="false" from="USD" to="GHS" background-color="#f7931a" border-radius="0.35" height="700px"></fxwidget-cc><a href="https://currencyrate.today/">CurrencyRate</a>
+                        </div>
+                         */}
                         <div className="home__text">
                             <p><span>Trade</span> confidently and conveniently in <span>Ghana</span> <br/>Get Blockchain <span>wallet</span> Address to Save Your Bitcoin.</p>
                             <a href='' className='btn btn-getStart'>Get Started For Free</a>
                         </div>
-                        
                         <div className="playstore">
                             <div className="payment_method">
                                 <h1>We <span>Accept:</span></h1>
@@ -125,6 +125,9 @@ class HomeMain extends Component {
                             </div>
                         </div>
                     </section>
+                    {/* <div className="exchangeRate">
+<iframe src="//www.exchangerates.org.uk/widget/ER-LRTICKER.php?w=999&s=1&mc=USD&mbg=F0F0F0&bs=yes&bc=000044&f=verdana&fs=10px&fc=000044&lc=000044&lhc=FE9A00&vc=FE9A00&vcu=008000&vcd=FF0000&" width="999" height="30" frameborder="0" scrolling="no" marginwidth="0" marginheight="0"></iframe>
+                </div> */}
                     <section className='great__work'>
                         <div className="great__work__head">
                             <h3><span>Excellence</span></h3>

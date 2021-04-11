@@ -11,6 +11,8 @@ import ContactMain from './Components/Contact-us/contact-us';
 import DigitalCurrency from './Components/FAQS-Router/DigitalCurrency';
 import TypeDigitalCurrency from './Components/FAQS-Router/typeDigital';
 import GetCurrency from './Components/FAQS-Router/GetCurrency';
+import WhyRegister from './Components/FAQS-Router/WhyRegister';
+import HowToBuy from './Components/FAQS-Router/HowToBuy';
 
 class MainApp extends Component {
     constructor(props) {
@@ -34,6 +36,8 @@ class MainApp extends Component {
                               <Route path='/digitalcurrency' exact component={DigitalCurrency}/> 
                               <Route path='/typedigitalcurrency' exact component={TypeDigitalCurrency}/> 
                               <Route path='/getcurrency' exact component={GetCurrency}/> 
+                              <Route path='/whyRegister' exact component={WhyRegister}/> 
+                              <Route path='/howtobuy' exact component={HowToBuy}/> 
                            </Switch>
                         </div>
                         <Footer/>

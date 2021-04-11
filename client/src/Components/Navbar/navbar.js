@@ -59,6 +59,7 @@ class Navbar extends Component {
         }
         return ( 
             <div className=' navbarMain'>
+               
                <section className='navMain'>
                    <nav>
                        <div className='logoImg animate__animated animate__slower animate__flash'>
@@ -80,6 +81,7 @@ class Navbar extends Component {
                                     </div>
                                 </div>
                            </ul>
+                           
                        </div>
                        <div className='aboyt__toggle '>
                             <div className='toggle__bar animate__animated animate__slower animate__zoomInDown'>
@@ -88,6 +90,8 @@ class Navbar extends Component {
                                 <div className='toggle'></div>
                             </div>
                      </div>
+                     
+                        
                      </nav>
                      
                </section>

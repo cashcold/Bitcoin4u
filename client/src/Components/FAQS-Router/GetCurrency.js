@@ -10,7 +10,7 @@ class GetCurrency extends Component {
             <div className='Digital__currency'>
                 <section className='digital__box1'>
                     <p>
-                        <h1><span>CREATING</span> YOUR CRYPTO WALLET/ACCOUNT</h1>
+                        <h1><span>CREATING</span> YOUR <span>CRYPTO</span> WALLET/ACCOUNT</h1>
                         It’s very important to manage your bitcoins safely. We assist in buying and selling Cryptocurrencies like Bitcoin, Ethereum, Litecoin, Bitcoin Cash and Digital Currencies like Perfect Money, but you are responsible for managing them yourself. In this article, We will use Bitcoin has the first Cryptocurrency Wallet Your Are creating. With Cryptocurrencies Like Bitcoin: you are your own bank!
                         <br/>
                         You manage your bitcoin/cryptocurrency using a wallet. On this page we’ll explain everything you need to know about wallets.
@@ -79,11 +79,7 @@ class GetCurrency extends Component {
                         First, log into your wallet. In most wallets, the receiving address can be found under the button ‘Receive’. There are wallets in which a bitcoin receiving address will automatically change once it has been used for a transaction. This is in consideration of your privacy. But don’t worry: ‘old’ receiving addresses will always stay valid and linked to your wallet.
                         <br/>
                     </p> 
-                    <p>
-                        <h1>The receiving <span>address</span></h1>
-                        First, log into your wallet. In most wallets, the receiving address can be found under the button ‘Receive’. There are wallets in which a bitcoin receiving address will automatically change once it has been used for a transaction. This is in consideration of your privacy. But don’t worry: ‘old’ receiving addresses will always stay valid and linked to your wallet.
-                        <br/>
-                    </p> 
+                   
                 </section>
                 <section className='hlogo'>
                 <div className='logoImg animate__animated animate__slower animate__flash'>
