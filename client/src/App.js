@@ -13,6 +13,7 @@ import TypeDigitalCurrency from './Components/FAQS-Router/typeDigital';
 import GetCurrency from './Components/FAQS-Router/GetCurrency';
 import WhyRegister from './Components/FAQS-Router/WhyRegister';
 import HowToBuy from './Components/FAQS-Router/HowToBuy';
+import DashboardMain from './Components/Dashboard/dashboard';
 
 class MainApp extends Component {
     constructor(props) {
@@ -33,6 +34,7 @@ class MainApp extends Component {
                               <Route path='/about-us' exact component={AboutMain}/> 
                               <Route path='/FAQS' exact component={FAQ_Main}/> 
                               <Route path='/contact-us' exact component={ContactMain}/> 
+                              <Route path='/dashboard' exact component={DashboardMain}/> 
                               <Route path='/digitalcurrency' exact component={DigitalCurrency}/> 
                               <Route path='/typedigitalcurrency' exact component={TypeDigitalCurrency}/> 
                               <Route path='/getcurrency' exact component={GetCurrency}/> 

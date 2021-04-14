@@ -1,0 +1,159 @@
+.dashboard__main{
+    padding: 11em 0;
+    min-height: 100vh;
+}
+.dashboard__main{
+    min-height: 100vh;
+    background-color: #04051a;
+}
+.das__box_1{
+    min-height: 100vh;
+    background-color: #060826;
+    min-height: 100vh;
+}
+.das__box_2{
+    min-height: 100vh;
+}
+.dash__box____main{
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+}
+.inner__box__1{
+    min-height: 100vh;
+    background-color: #060826;
+    min-height: 15vh;
+}
+.inner__box__2{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #040731;
+    padding-top: 0.5em;
+}
+.bitcoin4uDashH1 h1{
+    font-size: 3rem;
+}
+.dashList ul li{
+    padding: 2.5em 0;
+}   
+.dashList ul a{
+    padding: 2em 5em;
+    border: 1px solid #f7931a;
+    border-radius: 10%;
+    box-shadow: 0px 0px 5px #f7931a;
+    
+}
+.dashList i{
+    color: hsl(33, 93%, 54%);
+    padding-right: 0.5em;
+}
+.dashList span{
+    color: #f7931a;
+}
+.dashicon i{
+    padding-left: 1em;
+    color: green;
+}
+.dashList{
+padding-top: 4em;
+}
+.inner__box__1{
+    padding: 1.3em 0;
+}
+.inner__box__1 i{
+    color: #f7931a;
+    padding: 0 0.5em;
+}
+.sapInner__box_1 span i {
+    color: green;
+}
+.both__inner__box{
+    float: right;
+    padding-right: 1em;
+}
+.dashUser__box{
+    margin-left: 9em;
+}
+.dashUser__box ul li{
+    padding: 1em 0;
+}
+.dashUser__box ul a{
+    color: #f7931a;
+}
+.dashUser__box{
+    display: none;
+}
+.section__box__main{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding-left: 4em;
+    grid-gap: 1em;
+    background-color: #0b1166;
+}
+.main__main{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+}
+.section__box__main i {
+        padding-right: 1em;
+}
+
+@media screen and (max-width: 768px){
+    .das__box_1{
+     
+    }
+    .dash__box____main{
+        display: grid;
+        grid-template-columns:  repeat(1,1fr);
+        grid-template-areas: 
+        'das__box_2';
+    }
+    .das__box_2{
+        grid-area: das__box_2;
+    }
+    .section__box__main{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding-left: 0em;
+        grid-gap: 1em;
+        background-color: #0b1166;
+    }
+    .main__main{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        align-items: center;
+    }
+    .dashList ul li{
+        padding: 1.5em 0;
+    } 
+    .dashList ul a{
+        padding: 1.5em 2.5em;
+        border: 1px solid #f7931a;
+        border-radius: 5%;
+        box-shadow: 0px 0px 2px #f7931a;
+        
+    }
+    .dashicon i{
+        padding-left: 0.6em;
+        color: green;
+    }
+    .dashList{
+        padding-top: 2em;
+    }
+    .section__box__main i {
+        padding-right: 0.5em;
+    }
+    .dashboard__main{
+        padding: 7em 0;
+        min-height: 100vh;
+    }
+    .inner__box__1{
+    min-height: 100vh;
+    background-color: #060826;
+    min-height: 15vh;   
+    }
+    .inner__box__1{
+        padding: 5em 0;
+    }
+   
+}
