@@ -9,7 +9,7 @@
 .das__box_1{
     min-height: 100vh;
     background-color: #060826;
-    min-height: 100vh;
+    min-height: 70vh;
 }
 .das__box_2{
     min-height: 100vh;
@@ -97,6 +97,35 @@ padding-top: 4em;
 .section__box__main i {
         padding-right: 1em;
 }
+.transi__inner__box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.all__trans__boxme{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.transition__main{
+    margin-top: -4em ;
+    min-height: 100vh;
+    background-color: #04051a;
+}
+.transition__box1 h1{
+    padding: 1em 0;
+}
+.transition__main span{
+    color: #f7931a;
+}
+.order__details p{
+    padding: 1em 0;
+}
+.transi__brand__color{
+     background-color: #18192b;
+}
+.transi__brand__color_1{
+     background-color: #2a2a2e;
+}
+
 
 @media screen and (max-width: 768px){
     .das__box_1{
@@ -148,12 +177,24 @@ padding-top: 4em;
         min-height: 100vh;
     }
     .inner__box__1{
-    min-height: 100vh;
     background-color: #060826;
-    min-height: 15vh;   
+    min-height: 20vh;   
     }
     .inner__box__1{
         padding: 5em 0;
+        margin: 7em 0;
     }
-   
+    .inner__box__1 i{
+        color: #f7931a;
+        padding: 0 0.5em;
+    }
+    .both__inner__box{
+        float: right;
+        padding-right: 3em;
+    }
+    .transi__inner__box{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 2em;
+    }
 }

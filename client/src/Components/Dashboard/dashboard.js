@@ -26,7 +26,9 @@ class DashboardMain extends Component {
     }
     render() { 
         return ( 
-            <div className='dashboard__main'>
+            <div className='dashTop'>
+                <section className='firstDash'>
+                <div className='dashboard__main'>
                  {/* <div className='logoImg dashImg bitcoin4uDashH1 animate__animated animate__slower animate__flash'>
                         <h1> <i class="fab fa-bitcoin fa-2x"></i> Bitcoin4u</h1>
                        </div> */}
@@ -80,8 +82,98 @@ class DashboardMain extends Component {
                             </section>
                         </div>
                     </div>
-                </section>
+                </section> 
             </div>
+        </section>
+        <section className='transition__main'>
+                <div className="transition__all">
+                     <div className="transition__box1">
+                        <h1><span>Recent</span> Orders</h1>
+                        <div className="transition__inner">
+                            <div className="transi__inner__box">
+                               <div className="tran__box__all transi__brand__color">
+                                 <h1><span>Recent</span> Buy</h1>
+                                   <div className="all__trans__boxme">
+                                     <div className="trans__orders_info__box_1">
+                                            <h5><span>Order No.</span></h5>
+                                            <div className="order__details">
+                                                <p>BO423679</p>
+                                                <p>BO451666</p>
+                                                <p>BO423698</p>
+                                            </div>
+                                        </div>
+                                        <div className="trans__orders_info__box_1">
+                                            <h5><span>Date</span></h5>
+                                            <div className="order__details">
+                                                <p>12/09/20 10:44</p>
+                                                <p>06/09/20 10:44</p>
+                                                <p>28/09/20 10:44</p>
+                                            </div>
+                                        </div>
+                                        <div className="trans__orders_info__box_1">
+                                            <h5><span>Amount</span></h5>
+                                            <div className="order__details">
+                                                <p>	16.95 USD</p>
+                                                <p>	50.95 USD</p>
+                                                <p>	100.95 USD</p>
+                                            </div>
+                                        </div>
+                                        <div className="trans__orders_info__box_1">
+                                            <h5><span> Method</span></h5>
+                                            <div className="order__details">
+                                                <p>Buy</p>
+                                                <p>Buy</p>
+                                                <p>Buy</p>
+                                            </div>
+                                        </div>
+                                      
+                                   </div>
+                                   <h4><span>Total</span> Buy<br/> usd 168.85</h4>
+                               </div>
+                               <div className="tran__box__all transi__brand__color_1">
+                                 <h1><span>Recent</span> Sell</h1>
+                                   <div className="all__trans__boxme">
+                                     <div className="trans__orders_info__box_1">
+                                            <h5><span>Order No.</span></h5>
+                                            <div className="order__details">
+                                                <p>BO423679</p>
+                                                <p>BO451666</p>
+                                                <p>BO423698</p>
+                                            </div>
+                                        </div>
+                                        <div className="trans__orders_info__box_1">
+                                            <h5><span>Date</span></h5>
+                                            <div className="order__details">
+                                                <p>12/09/20 10:44</p>
+                                                <p>06/09/20 10:44</p>
+                                                <p>28/09/20 10:44</p>
+                                            </div>
+                                        </div>
+                                        <div className="trans__orders_info__box_1">
+                                            <h5><span>Amount</span></h5>
+                                            <div className="order__details">
+                                                <p>	16.95 USD</p>
+                                                <p>	50.95 USD</p>
+                                                <p>	100.95 USD</p>
+                                            </div>
+                                        </div>
+                                        <div className="trans__orders_info__box_1">
+                                            <h5><span> Method</span></h5>
+                                            <p>Sell</p>
+                                            <p>Sell</p>
+                                            <p>Sell</p>
+                                        </div>
+                                   </div>
+                                   <h4><span>Total</span> Sell<br/> usd 168.85</h4>
+                               </div>
+                            
+                            </div>
+                          
+                        </div>
+                    </div>
+              </div>
+        </section>
+     </div>
          );
     }
 }
