@@ -53,10 +53,10 @@ h2,h3,h4,h5{
 i{
     color: #f7931a;
 }
-
+/* 
 .mainApp{
     padding-bottom: 200%;
-}
+} */
 @media screen and (max-width: 768px){
     h1{
         font-size: 1.3rem;
