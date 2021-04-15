@@ -1,16 +1,17 @@
 
 .login__main{
-    padding: 20em 3em;
+    padding: 11em 0em;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-gap: 5em;
+    
     background-color: #0b0d31;
     min-height: 100vh;
 }
+.login__section_1{
+ background-color: #23747A;   
+}
 .login_section_2{
- 
-    background-color: #9a9cc2;
-    
+ background-color: #9a9cc2;   
 }
 img{
     width: 100%;
@@ -29,4 +30,34 @@ img{
 }
 .myForms input:focus{
     outline: none;
+}
+.log__btn{
+    padding: 2em 0;
+}
+.log__btn a{
+    margin-right: 1.5em;
+}
+.login__box_1{
+    padding-top: 2em;
+}
+
+@media screen and (max-width: 768px){
+    .login__main{
+        padding: 10em 0em;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        background-color: #0b0d31;
+        min-height: 80vh;
+        grid-template-areas: 
+        'login_section_2';
+    }
+    .login_section_2{
+        grid-area: login_section_2;
+    }
+    .myForms input{
+        border: none;
+        border-bottom: 2px solid blue;
+        width: 90%;
+        height: 35px;
+    }
 }

@@ -20,10 +20,14 @@ class LoginMain extends Component {
                                  <input type='password' name='password' placeholder='Password' required/>
                             </div>
                         </div>
+                        <div className="log__btn">
+                            <a href='' className='btn btn-warning'>Login</a>
+                            <a href='' className='btn btn-danger'>Forgot password</a>
+                        </div>
                     </div>
                 </section>
                 <section className='login_section_2'>
-                    <img src={require('../../images/undraw_nakamoto_2iv6.svg')}/>
+                    <img src={require('../../images/thought-catalog-Xeo_7HSwYsA-unsplash.jpg')}/>
                 </section>
             </div>
          );
