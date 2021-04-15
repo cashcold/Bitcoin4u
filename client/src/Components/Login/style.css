@@ -1,0 +1,32 @@
+
+.login__main{
+    padding: 20em 3em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5em;
+    background-color: #0b0d31;
+    min-height: 100vh;
+}
+.login_section_2{
+ 
+    background-color: #9a9cc2;
+    
+}
+img{
+    width: 100%;
+}
+.login__main span{
+    color: #f7931a;
+}
+.myForms input{
+    border: none;
+    border-bottom: 2px solid blue;
+    width: 400px;
+    height: 35px;
+}
+.login__forms{
+    padding-left: 0em;
+}
+.myForms input:focus{
+    outline: none;
+}
