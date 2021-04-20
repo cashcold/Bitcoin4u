@@ -34,12 +34,12 @@ class DashboardMain extends Component {
                        </div> */}
                 <section className='dash__box____main'>
                     <div className="das__box_1">
-                       
                        <div className="dashList">
                            <h3><span>Hi</span> Cash <span className='dashicon'> <i class="fas fa-signal fa-1x"></i></span></h3>
                            <ul>
                                <li><a href=''><i class="fas fa-user fa-2x"></i> Dashboard </a></li>
-                               <li><a href=''><i class="fas fa-dollar-sign fa-2x"></i> Buy/Sell</a></li>
+                               <li><a href='/buy'><i class="fas fa-dollar-sign fa-2x"></i> Buy</a></li>
+                               <li><a href=''><i class="fas fa-dollar-sign fa-2x"></i> Sell</a></li>
                                <li><a href=''><i class="fas fa-file-invoice-dollar fa-2x"></i> Manage Orders</a></li>
                                <li><a href=''><i class="fas fa-file-signature fa-2x"></i> Manage Account</a></li>
                                <li><a href=''><i class="fas fa-key fa-2x"></i> Manage Payment</a></li>

@@ -82,6 +82,7 @@ padding-top: 4em;
 .dashUser__box{
     display: none;
 }
+
 .section__box__main{
     display: grid;
     grid-template-columns: repeat(2,1fr);

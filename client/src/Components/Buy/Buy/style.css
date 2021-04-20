@@ -1,0 +1,66 @@
+.buy__main{
+    padding: 16em 0;
+    background-color: #0f112e;
+    min-height: 100vh;
+}
+.buy__main span{
+    color: #f7931a;
+}
+.buy__section_2{
+    padding: 2em 0;
+    background-color: #151733;
+    min-height: 30vh;
+}
+.buy__section_1 h3{
+    padding-bottom: 2em;
+}
+.buyform{
+    padding-bottom: 3em;
+}
+.buyform input{
+    border: none;
+    border-bottom: 2px solid blue;
+    width: 400px;
+    height: 35px;
+}
+.buyform input:focus{
+    outline: none;
+}
+.both__section{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.buyform img{
+    width: 52px;
+    padding-right: 1em;
+}
+
+
+@media screen and (max-width: 768px){
+    .buyform input{
+        border: none;
+        border-bottom: 2px solid blue;
+        width: 90%;
+        height: 35px;
+    }
+    .buy__main{
+        padding: 8em 0;
+        background-color: #0f112e;
+        min-height: 100vh;
+    }
+    .both__section{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 4em;
+    grid-template-areas: 
+    'other__section';
+    }
+    .other__section{
+       grid-area: other__section;
+    }
+    .buyform img{
+        width: 52px;
+        padding-bottom: 1em;
+    }
+}

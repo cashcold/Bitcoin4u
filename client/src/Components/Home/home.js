@@ -63,11 +63,6 @@ class HomeMain extends Component {
                         <div className="home_1">
                             <h1><span>Buy</span> and <span>sell</span> cryptocurrency<br/> the <span>best</span> price, with no <span>hidden</span> fees.</h1>
                         </div>
-
-                        {/* <div className="exchangeRate">
-                        <fxwidget-cc className="exchangeRate__now" amount="1" decimals="2" large="true" shadow="true" symbol="true" grouping="true" border="false" from="USD" to="GHS" background-color="#f7931a" border-radius="0.35" height="700px"></fxwidget-cc><a href="https://currencyrate.today/">CurrencyRate</a>
-                        </div>
-                         */}
                         <div className="home__text">
                             <p><span>Trade</span> confidently and conveniently in <span>Ghana</span> <br/>Get Blockchain <span>wallet</span> Address to Save Your Bitcoin.</p>
                             <a href='' className='btn btn-getStart'>Get Started For Free</a>
