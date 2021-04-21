@@ -5,27 +5,41 @@ class BuyMain extends Component {
         super(props);
         this.state = { 
             usd: '',
-            gh: ''
+            gh: '',
+            out_usd: '',
+            phone__number: '',
+            wallert: ''
          }
 
         this.handleChange = this.handleChange.bind(this)
+       
     }
 
     handleChange =input => (event)=>{
         event.preventDefault()
         this.setState({[input]: event.target.value})
     }
+  
 
     componentDidMount(){
-        // const checkAmount__usd = ()=>{
-        //   if(this.state.usd){
-        //       this.state.usd + 5
-        //   }
-        // }
-        // checkAmount__usd()
-
+  
     }
     render() { 
+        const Check___usd = ()=>{
+             if(this.state.usd){
+             document.querySelector('.innOut').innerHTML = "GHC " + this.state.usd * 5.8
+         }
+
+        }
+      Check___usd()
+        const Check___gh = ()=>{
+             if(this.state.gh){
+             document.querySelector('.innOut').innerHTML = "USD " + this.state.gh * 0.17
+         }
+
+        }
+      Check___gh()
+   
         return ( 
             <div className='buy__main'>
                 <section className='buy__section_1'>
@@ -37,7 +51,7 @@ class BuyMain extends Component {
                            <div className="buy__all">
                                 <p>Enter BTC USD Amount to buy</p>
                                 <img src={require('../../../images/illustration-usa-flag_53876-18165.jpg')}/>
-                                <input name='usd' className='usd' onChange={this.handleChange('usd')}/>
+                                <input  name='usd' className='usd' onChange={this.handleChange('usd')}/>
                            </div>
                         </div>
                         <div className="buyform">
@@ -47,13 +61,22 @@ class BuyMain extends Component {
                                  <input name='gh' className='gh' onChange={this.handleChange('gh')}/>
                             </div>
                         </div>
-                        <div className="buyform">
-                            <p>Total to Pay {this.state.usd}</p>
+                        <div className="buyform buyform__p">
+                            <p><span>You</span> are to Pay Total <br/><p className='innOut'></p> </p>
+                            
+                           
                             <p className='amount__to__pay'></p>
                         </div>
                         <div className="buyform">
                             <p>Enter Bitcon Wallet Address</p>
                             <input/>
+                        </div>
+                        <div className="buyform">
+                            <p>Payment Phone Number</p>
+                            <input/>
+                        </div>
+                        <div className="buyform">
+                            <a href='/confirmBuy' className='btn btn-warning'>Next</a>
                         </div>
                     </section>
                     <section className='other__section'>

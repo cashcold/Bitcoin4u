@@ -1,0 +1,117 @@
+.confirm__buy__main{
+    padding: 15em 0;
+    background-color: #0f112e;
+    min-height: 100vh;
+}
+.confrim__section__2{
+    background-color: #1c1e3b;
+   width: 70%;
+   margin:  0 auto;
+   min-height: 60vh;
+}
+.confirm__section__1 h1{
+    padding-bottom: 1.5em;
+}
+.confirm__buy__main span{
+    color: #f7931a;
+}
+.confirmLine{
+    display: flex;
+}
+.confirmDepositNow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lastDepositConfirm{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.confirmLine{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px; 
+}
+.confirm{
+    width: 100%;
+    min-height: 80vh;
+    padding: 3em 0;
+}
+.planInfo{
+    display: flex;
+    justify-content: space-evenly;
+}
+.planInfo p{
+    font-size: 20px;
+    padding: 20px 10px;
+}
+.lastConfirm{
+    display: block;
+}
+.confirmBtnInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+}
+.btnConfirm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputHide{
+    display: none;
+}
+.wallertNumber{
+    margin: 30px 0;
+}
+.automatic img{
+    margin: 30px 0;
+}
+.confirmDepositNow h1{
+    margin: 40px 0;
+}
+.confirmDepositNow span,.confirmBtnInfo span{
+    color: #FBA317;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .confirmDepositNow h1{
+        font-size: 20px;
+    }
+    .lastConfirm{
+        width: 100%;
+        min-height: 700px;
+    }
+    .lastConfirm p{
+        font-size: 1.5rem;
+    }
+    .wallertNumber{
+        margin: 30px 0;
+        font-size: 0.5rem;
+    }
+    .planInfo p{
+        font-size: 0.9rem;
+        padding: 1em 0;
+    }
+    .confirmBtnInfo p{
+        font-size: 0.9rem;
+    }
+    .confirm__buy__main{
+        padding: 13em 0;
+        background-color: #0f112e;
+        min-height: 100vh;
+    }
+    .confrim__section__2{
+        background-color: #1c1e3b;
+       width: 95%;
+       margin:  0 auto;
+       height: 40vh;
+    }
+}

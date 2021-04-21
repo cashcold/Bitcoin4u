@@ -15,7 +15,7 @@
     padding-bottom: 2em;
 }
 .buyform{
-    padding-bottom: 3em;
+    padding-bottom: 2em;
 }
 .buyform input{
     border: none;
@@ -35,6 +35,15 @@
     width: 52px;
     padding-right: 1em;
 }
+.buyform__p {
+     display: block;
+}
+.buyform a{
+    color: white;
+}
+.buyform .btn{
+    padding: 1em 4em;
+}
 
 
 @media screen and (max-width: 768px){
@@ -45,7 +54,7 @@
         height: 35px;
     }
     .buy__main{
-        padding: 8em 0;
+        padding: 11em 0;
         background-color: #0f112e;
         min-height: 100vh;
     }

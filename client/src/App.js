@@ -17,6 +17,7 @@ import DashboardMain from './Components/Dashboard/dashboard';
 import LoginMain from './Components/Login/login';
 import RegisterMain from './Components/Register/register';
 import BuyMain from './Components/Buy/Buy/buy';
+import ConfirmBuyMain from './Components/Buy/ConfirmBuy/confirmBuy';
 
 class MainApp extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class MainApp extends Component {
                               <Route path='/login' exact component={LoginMain}/> 
                               <Route path='/register' exact component={RegisterMain}/> 
                               <Route path='/buy' exact component={BuyMain}/> 
+                              <Route path='/confirmBuy' exact component={ConfirmBuyMain}/> 
                               <Route path='/digitalcurrency' exact component={DigitalCurrency}/> 
                               <Route path='/typedigitalcurrency' exact component={TypeDigitalCurrency}/> 
                               <Route path='/getcurrency' exact component={GetCurrency}/> 
