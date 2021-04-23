@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import './style.css'
+import jwt_decode from 'jwt-decode'
+
+
 class DashboardMain extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            id: '',
+            full_name: '',
+            email: '',
+            phone: '',
+            date: '',
+            ip_address: ''
+         }
     }
 
     componentDidMount(){
@@ -23,6 +33,22 @@ class DashboardMain extends Component {
         }
         DropUserInfo()
 
+        const token = sessionStorage.getItem('x-access-token')
+        const decoded = jwt_decode(token)
+         JSON.stringify( sessionStorage.setItem('user_id',decoded.user_id))
+         JSON.stringify( sessionStorage.setItem('full_Name',decoded.full_Name))
+         JSON.stringify( sessionStorage.setItem('email',decoded.email))
+         JSON.stringify( sessionStorage.setItem('phone',decoded.phone))
+         JSON.stringify( sessionStorage.setItem('ip_address',decoded.ip_address))
+        this.setState({
+            id: decoded.user_id,
+            full_name: decoded.full_name,
+            ip_address: decoded.ip_address,
+            email: decoded.email,
+            phone: decoded.phone,
+            date: decoded.date
+         })
+
     }
     render() { 
         return ( 
@@ -35,7 +61,7 @@ class DashboardMain extends Component {
                 <section className='dash__box____main'>
                     <div className="das__box_1">
                        <div className="dashList">
-                           <h3><span>Hi</span> Cash <span className='dashicon'> <i class="fas fa-signal fa-1x"></i></span></h3>
+                           <h3><span>Hi</span> {this.state.full_name} <span className='dashicon'> <i class="fas fa-signal fa-1x"></i></span></h3>
                            <ul>
                                <li><a href=''><i class="fas fa-user fa-2x"></i> Dashboard </a></li>
                                <li><a href='/buy'><i class="fas fa-dollar-sign fa-2x"></i> Buy</a></li>

@@ -27,17 +27,11 @@ Router.post('/register/', async(req,res)=>{
     const hashPassword = await bcrypt.hash(req.body.password, salt)
 
     const saveUser = new User({
-        full_Name: req.body.full_Name,
-        user_Name: req.body.user_Name,
+        full_name: req.body.full_name,
         password: hashPassword,
         email: req.body.email,
-        bitcoin: req.body.bitcoin,
-        bitcoinCash: req.body.bitcoinCash,
-        ethereum: req.body.ethereum,
+        phone: Number(req.body.phone),
         ip_address: req.body.ip_address,
-        accountBalance: req.body.accountBalance,
-        reffer: req.body.reffer,
-        activetDeposit: req.body.activetDeposit,
         date: req.body.date
     })
 
@@ -72,18 +66,12 @@ Router.post('/login', async(req,res)=>{
         else{
             const payload = {
                  user_id: user._id,
-                 full_Name: user.full_Name,
-                 user_Name: user.user_Name,
+                 full_name: user.full_name,
+                 phone: user.phone,
                  email: user.email,
                  password: user.password,
-                 bitcoin: user.bitcoin,
-                 bitcoinCash: user.bitcoinCash,
-                 ethereum: user.ethereum,
                  ip_address: user.ip_address,           
                  date: user.Date,
-                 accountBalance: user.accountBalance,
-                 activetDeposit: user.activetDeposit,
-                 date: user.date
             }
             const token = jwt.sign(payload, process.env.TokenSecret)
             res.header('x-access-token', token)

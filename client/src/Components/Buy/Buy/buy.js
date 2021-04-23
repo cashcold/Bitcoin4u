@@ -76,6 +76,10 @@ class BuyMain extends Component {
                             <input/>
                         </div>
                         <div className="buyform">
+                            <p>Payment Number Name</p>
+                            <input/>
+                        </div>
+                        <div className="buyform">
                             <a href='/confirmBuy' className='btn btn-warning'>Next</a>
                         </div>
                     </section>

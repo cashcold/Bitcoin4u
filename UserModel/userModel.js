@@ -1,11 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    full_Name: {
-        type: String,
-        require: true,
-    },
-    user_Name: {
+    full_name: {
         type: String,
         require: true,
     },
@@ -13,35 +9,21 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    phone: {
+        type: Number,
+        require: true,
+    },
     
     email: {
         type: String,
         require: true,
     },
-    bitcoin: {
-        type: String,
-    },
-    bitcoinCash: {
-        type: String,
-    },
-    ethereum: {
-        type: String,
-    },
     ip_address:{
         type: String,
         require: true
     },
-    accountBalance: {
-        type: String,
-    },
-    reffer:{
-        type: String
-    },
     restartLinkPassword:{
         type: String,
-    },
-    activetDeposit: {
-        
     },
     date: {
         

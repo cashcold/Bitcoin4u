@@ -5,7 +5,7 @@
 }
 .confrim__section__2{
     background-color: #1c1e3b;
-   width: 70%;
+   width: 100%;
    margin:  0 auto;
    min-height: 60vh;
 }
@@ -78,7 +78,10 @@
 .confirmDepositNow span,.confirmBtnInfo span{
     color: #FBA317;
 }
-
+.both__confirm{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 
 
 @media screen and (max-width: 768px){
@@ -110,8 +113,34 @@
     }
     .confrim__section__2{
         background-color: #1c1e3b;
-       width: 95%;
+       width: 100%;
        margin:  0 auto;
        height: 40vh;
     }
+    .both__confirm{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-areas: 
+        'other__section__confirm';
+    }
+    .other__section__confirm{
+        grid-area: other__section__confirm;
+    }
+    .confirm__buy__main{
+        padding: 18em 0;
+        background-color: #0f112e;
+        min-height: 100vh;
+    }
+    .planInfo p{
+        font-size: 1em;
+        padding: 10px 0px;
+    }
+   .planInfo_2{
+       padding: 0 0.2em;
+   }
+   
+    
+   
+    
+
 }
