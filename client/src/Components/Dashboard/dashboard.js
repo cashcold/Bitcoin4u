@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css'
 import jwt_decode from 'jwt-decode'
-
+import axios from 'axios'
 
 class DashboardMain extends Component {
     constructor(props) {
@@ -12,7 +12,8 @@ class DashboardMain extends Component {
             email: '',
             phone: '',
             date: '',
-            ip_address: ''
+            ip_address: '',
+            buyTotal: ''
          }
     }
 
@@ -36,10 +37,11 @@ class DashboardMain extends Component {
         const token = sessionStorage.getItem('x-access-token')
         const decoded = jwt_decode(token)
          JSON.stringify( sessionStorage.setItem('user_id',decoded.user_id))
-         JSON.stringify( sessionStorage.setItem('full_Name',decoded.full_Name))
+         JSON.stringify( sessionStorage.setItem('full_name',decoded.full_name))
          JSON.stringify( sessionStorage.setItem('email',decoded.email))
          JSON.stringify( sessionStorage.setItem('phone',decoded.phone))
          JSON.stringify( sessionStorage.setItem('ip_address',decoded.ip_address))
+         JSON.stringify( sessionStorage.setItem('date',decoded.date))
         this.setState({
             id: decoded.user_id,
             full_name: decoded.full_name,
@@ -49,8 +51,14 @@ class DashboardMain extends Component {
             date: decoded.date
          })
 
+         const id = decoded.user_id
+         axios.post('/users/buyBitcoinInfo',{id}).then(data => this.setState({
+            buyTotal: data.data
+         }))
+
     }
     render() { 
+        console.log(this.state.buyTotal)
         return ( 
             <div className='dashTop'>
                 <section className='firstDash'>

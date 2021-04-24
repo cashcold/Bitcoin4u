@@ -33,7 +33,6 @@ class LoginMain extends Component {
             email: this.state.email,
             password: this.state.password
         }
-        console.log(userLogin)
 
         if(!userLogin.email){
             toast.warning('Enter Email Address')

@@ -5,29 +5,24 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    full_name: {
+    full_Name: {
         type: String,
         require: true,
     },
-    user_Name: {
-        type: String,
-        require: true,
-    },
-    planNow: {
-        type: String,
-        require: true,
-    },
-    depositAmount: {
+   usd: {
         
         type: Number,
         require: true,
     },
-    depositAmountlast: {
+    payment__number: {
         
         type: Number,
         require: true,
     },
-  
+    payment__name: {
+        type: String,
+        require: true,
+    },
     walletAddress: {
         type: String,
         require: true,
@@ -45,6 +40,6 @@ const userSchema = new mongoose.Schema({
     
 })
 
-const UserDeposit = mongoose.model('UserDeposit', userSchema)
+const BuyBitcoin = mongoose.model('BuyBitcoin', userSchema)
 
-module.exports = UserDeposit;
+module.exports = BuyBitcoin;

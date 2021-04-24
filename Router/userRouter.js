@@ -2,6 +2,7 @@ const express = require('express')
 const User = require('../UserModel/userModel')
 const UserDeposit = require('../UserModel/depositModel')
 const WithdrawDeposit = require('../UserModel/widthdraw')
+const BuyBitcoin = require('../UserModel/buyBitcoinModel')
 const bcrypt = require('bcryptjs')
 const mailgun = require('mailgun-js')
 const dotEnv = require('dotenv')
@@ -71,7 +72,7 @@ Router.post('/login', async(req,res)=>{
                  email: user.email,
                  password: user.password,
                  ip_address: user.ip_address,           
-                 date: user.Date,
+                 date: user.date,
             }
             const token = jwt.sign(payload, process.env.TokenSecret)
             res.header('x-access-token', token)
@@ -186,6 +187,24 @@ Router.post('/withdrawInfo',async(req,res)=>{
     
     
 })
+
+Router.post('/buyBitcoinInfo',async(req,res)=>{
+   
+    user_id = req.body.id
+    const user = await BuyBitcoin.findOne({user_id: req.body.id})
+
+    if(user){
+        const currentDeposit = await BuyBitcoin.aggregate([
+            { $match : { user_id : user_id } },
+            {$group: {_id: "$user_id", usd: { $sum: "$usd" }}},
+            
+        ])
+    res.send(currentDeposit)
+    }
+    
+    
+})
+
 Router.post('/depositInfo',async(req,res)=>{
    
     user_id = req.body.id
@@ -204,21 +223,21 @@ Router.post('/depositInfo',async(req,res)=>{
 })
 
 
-Router.post('/deposit', async(req,res)=>{
+Router.post('/buyBitcoin', async(req,res)=>{
     
-    const UserDepositNow = new UserDeposit({
+    const BuyBitcoinNow = new BuyBitcoin({
         user_id: req.body.user_id,
-        user_Name: req.body.user_Name,
-        full_Name: req.body.full_Name,
-        planNow: req.body.planNow,
-        depositAmount: Number(req.body.depositAmount),
+        full_name: req.body.full_name,
+        usd: Number(req.body.usd),
+        payment__number: Number(req.body.payment__number),
+        payment__name: req.body. payment__name,
         walletAddress: req.body.walletAddress,
         email: req.body.email,
         date: req.body.date
 
     })
 
-    await UserDepositNow.save()
+    await BuyBitcoinNow.save()
     res.send(".........Waiting for BlockChain confirm to credit your Dashboard")
 })
 

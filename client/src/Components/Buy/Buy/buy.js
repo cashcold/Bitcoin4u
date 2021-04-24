@@ -5,13 +5,16 @@ class BuyMain extends Component {
         super(props);
         this.state = { 
             usd: '',
-            gh: '',
-            out_usd: '',
-            phone__number: '',
-            wallert: ''
+            payment__number: '',
+            payment__name: '',
+            walletAddress: '',
+            full_name: '',
+            email: '',
+             date: ''
          }
 
         this.handleChange = this.handleChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
        
     }
 
@@ -24,6 +27,27 @@ class BuyMain extends Component {
     componentDidMount(){
   
     }
+
+    onSubmit = (event)=>{
+        event.preventDefault()
+        const buyNow = {
+            usd: this.state.usd,
+            payment__number: this.state.payment__number,
+            payment__name: this.state.payment__name,
+            walletAddress: this.state.walletAddress,
+            
+        }
+        console.log(buyNow)
+        JSON.stringify( sessionStorage.setItem('usd',this.state.usd))
+        JSON.stringify( sessionStorage.setItem('payment__number',this.state.payment__number))
+        JSON.stringify( sessionStorage.setItem('payment__name',this.state.payment__name))
+        JSON.stringify( sessionStorage.setItem('walletAddress',this.state.walletAddress))
+
+
+        setTimeout(()=>{
+            window.location='/confirmBuy'
+        },800)
+    }
     render() { 
         const Check___usd = ()=>{
              if(this.state.usd){
@@ -32,13 +56,13 @@ class BuyMain extends Component {
 
         }
       Check___usd()
-        const Check___gh = ()=>{
-             if(this.state.gh){
-             document.querySelector('.innOut').innerHTML = "USD " + this.state.gh * 0.17
-         }
+    //     const Check___gh = ()=>{
+    //          if(this.state.gh){
+    //          document.querySelector('.innOut').innerHTML = "USD " + this.state.gh * 0.17
+    //      }
 
-        }
-      Check___gh()
+    //     }
+    //   Check___gh()
    
         return ( 
             <div className='buy__main'>
@@ -54,33 +78,34 @@ class BuyMain extends Component {
                                 <input  name='usd' className='usd' onChange={this.handleChange('usd')}/>
                            </div>
                         </div>
-                        <div className="buyform">
+                        {/* <div className="buyform">
                             <div className="buy__all">
                                  <p>Enter GH¢ Amount to pay</p>
                                  <img src={require('../../../images/istockphoto-1161593798-612x612.jpg')}/>
                                  <input name='gh' className='gh' onChange={this.handleChange('gh')}/>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="buyform buyform__p">
                             <p><span>You</span> are to Pay Total <br/><p className='innOut'></p> </p>
                             
                            
                             <p className='amount__to__pay'></p>
                         </div>
-                        <div className="buyform">
+                        <div className="buyform"> 
                             <p>Enter Bitcon Wallet Address</p>
-                            <input/>
+                            <input name='walletAddress' onChange={this.handleChange('walletAddress')}/>
                         </div>
                         <div className="buyform">
                             <p>Payment Phone Number</p>
-                            <input/>
+                            <input name='payment__number' onChange={this.handleChange('payment__number')}/>
                         </div>
                         <div className="buyform">
                             <p>Payment Number Name</p>
-                            <input/>
+                            <input name='payment__name' onChange={this.handleChange('payment__name')}/>
                         </div>
                         <div className="buyform">
-                            <a href='/confirmBuy' className='btn btn-warning'>Next</a>
+                            {/* <a href='' onClick={this.onSubmit} className='btn btn-warning'>Next</a> */}
+                            <a href='#' onClick={this.onSubmit} className='btn btn-warning'>Next</a>
                         </div>
                     </section>
                     <section className='other__section'>
