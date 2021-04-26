@@ -62,16 +62,12 @@ class DashboardMain extends Component {
 
     }
     render() { 
-    //   console.log(this.state.buyTotal.lastBuy)
-        const {lastBuy1} = this.state.buyTotal;
-      console.log(lastBuy1)
+   
         return ( 
             <div className='dashTop'>
                 <section className='firstDash'>
                 <div className='dashboard__main'>
-                 {/* <div className='logoImg dashImg bitcoin4uDashH1 animate__animated animate__slower animate__flash'>
-                        <h1> <i class="fab fa-bitcoin fa-2x"></i> Bitcoin4u</h1>
-                       </div> */}
+                
                 <section className='dash__box____main'>
                     <div className="das__box_1">
                        <div className="dashList">
@@ -84,7 +80,6 @@ class DashboardMain extends Component {
                                <li><a href=''><i class="fas fa-file-signature fa-2x"></i> Manage Account</a></li>
                                <li><a href=''><i class="fas fa-key fa-2x"></i> Manage Payment</a></li>
                                <li><a href=''><i class="fas fa-hands-helping fa-2x"></i> Support Center</a></li>
-                               <li><a href=''><i class="fas fa-sign-out-alt fa-2x"></i> Logout</a></li>
                            </ul>
                        </div>
                     </div>
