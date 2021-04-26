@@ -17,7 +17,8 @@ class RegisterMain extends Component {
             confirm_password: '',
             ip_address: '',
             checkBox: '',
-            date: ''
+            date: '',
+            restartLinkPassword: ''
          }
 
         this.handleChange = this.handleChange.bind(this)
@@ -41,7 +42,7 @@ class RegisterMain extends Component {
 
     }
 
-    onSubmit = (event)=>{
+    onSubmit = (event)=>{ 
         event.preventDefault()
         const SaveNewUser = {
             full_name: this.state.full_name,
@@ -50,6 +51,7 @@ class RegisterMain extends Component {
             phone: this.state.phone,
             ip_address: this.state.ip_address,
             checkBox: this.state.checkBox,
+            confirm_password: this.state.confirm_password,
             date: this.state.date
             
         }
@@ -63,9 +65,14 @@ class RegisterMain extends Component {
             toast.warn('password is must be at lest 6')
             return false
         }
-        if(!SaveNewUser.full_name || !SaveNewUser.phone || !SaveNewUser.password || !SaveNewUser.email){
+       
+        if(!SaveNewUser.full_name || !SaveNewUser.phone || !SaveNewUser.password || !SaveNewUser.confirm_password  || !SaveNewUser.email){
             toast.error('Please Fill All Field')
             return false;
+        }
+        if(SaveNewUser.password != SaveNewUser.confirm_password){
+            toast.warn('password do not match')
+            return false
         }
         if(!SaveNewUser.checkBox){ 
             toast.warn('Please agree with Terms and conditions')

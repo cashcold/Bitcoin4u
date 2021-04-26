@@ -13,7 +13,8 @@ class DashboardMain extends Component {
             phone: '',
             date: '',
             ip_address: '',
-            buyTotal: ''
+            buyTotal: [],
+            sellTotal: []
          }
     }
 
@@ -55,10 +56,15 @@ class DashboardMain extends Component {
          axios.post('/users/buyBitcoinInfo',{id}).then(data => this.setState({
             buyTotal: data.data
          }))
+         axios.post('/users/sellBitcoinInfo',{id}).then(data => this.setState({
+            sellTotal: data.data
+         }))
 
     }
     render() { 
-        console.log(this.state.buyTotal)
+    //   console.log(this.state.buyTotal.lastBuy)
+        const {lastBuy1} = this.state.buyTotal;
+      console.log(lastBuy1)
         return ( 
             <div className='dashTop'>
                 <section className='firstDash'>
@@ -73,7 +79,7 @@ class DashboardMain extends Component {
                            <ul>
                                <li><a href=''><i class="fas fa-user fa-2x"></i> Dashboard </a></li>
                                <li><a href='/buy'><i class="fas fa-dollar-sign fa-2x"></i> Buy</a></li>
-                               <li><a href=''><i class="fas fa-dollar-sign fa-2x"></i> Sell</a></li>
+                               <li><a href='/sell'><i class="fas fa-dollar-sign fa-2x"></i> Sell</a></li>
                                <li><a href=''><i class="fas fa-file-invoice-dollar fa-2x"></i> Manage Orders</a></li>
                                <li><a href=''><i class="fas fa-file-signature fa-2x"></i> Manage Account</a></li>
                                <li><a href=''><i class="fas fa-key fa-2x"></i> Manage Payment</a></li>
@@ -122,87 +128,29 @@ class DashboardMain extends Component {
         <section className='transition__main'>
                 <div className="transition__all">
                      <div className="transition__box1">
-                        <h1><span>Recent</span> Orders</h1>
+                        <h1><span>Recent</span> Transition </h1>
                         <div className="transition__inner">
                             <div className="transi__inner__box">
                                <div className="tran__box__all transi__brand__color">
-                                 <h1><span>Recent</span> Buy</h1>
-                                   <div className="all__trans__boxme">
-                                     <div className="trans__orders_info__box_1">
-                                            <h5><span>Order No.</span></h5>
-                                            <div className="order__details">
-                                                <p>BO423679</p>
-                                                <p>BO451666</p>
-                                                <p>BO423698</p>
-                                            </div>
-                                        </div>
-                                        <div className="trans__orders_info__box_1">
-                                            <h5><span>Date</span></h5>
-                                            <div className="order__details">
-                                                <p>12/09/20 10:44</p>
-                                                <p>06/09/20 10:44</p>
-                                                <p>28/09/20 10:44</p>
-                                            </div>
-                                        </div>
-                                        <div className="trans__orders_info__box_1">
-                                            <h5><span>Amount</span></h5>
-                                            <div className="order__details">
-                                                <p>	16.95 USD</p>
-                                                <p>	50.95 USD</p>
-                                                <p>	100.95 USD</p>
-                                            </div>
-                                        </div>
-                                        <div className="trans__orders_info__box_1">
-                                            <h5><span> Method</span></h5>
-                                            <div className="order__details">
-                                                <p>Buy</p>
-                                                <p>Buy</p>
-                                                <p>Buy</p>
-                                            </div>
-                                        </div>
-                                      
-                                   </div>
-                                   <h4><span>Total</span> Buy<br/> usd 168.85</h4>
+                                 <h4><span>Total  <i class="fab fa-bitcoin fa-2x"></i></span> Buy</h4>
+                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/>{this.state.buyTotal.map(user => user.totalBuy)} <span>usd</span></h4>
+                                 </div>
+                               <div className="tran__box__all transi__brand__color_1">
+                                 <h4><span>Total  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
+                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.totalSell)} <span>usd</span></h4>
+                                </div>
+                                 <div className="tran__box__all transi__brand__color">
+                                 <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i></span> Buy</h4>
+                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.buyTotal.map(user => user.lastBuy)} <span>usd</span></h4>
                                </div>
                                <div className="tran__box__all transi__brand__color_1">
-                                 <h1><span>Recent</span> Sell</h1>
-                                   <div className="all__trans__boxme">
-                                     <div className="trans__orders_info__box_1">
-                                            <h5><span>Order No.</span></h5>
-                                            <div className="order__details">
-                                                <p>BO423679</p>
-                                                <p>BO451666</p>
-                                                <p>BO423698</p>
-                                            </div>
-                                        </div>
-                                        <div className="trans__orders_info__box_1">
-                                            <h5><span>Date</span></h5>
-                                            <div className="order__details">
-                                                <p>12/09/20 10:44</p>
-                                                <p>06/09/20 10:44</p>
-                                                <p>28/09/20 10:44</p>
-                                            </div>
-                                        </div>
-                                        <div className="trans__orders_info__box_1">
-                                            <h5><span>Amount</span></h5>
-                                            <div className="order__details">
-                                                <p>	16.95 USD</p>
-                                                <p>	50.95 USD</p>
-                                                <p>	100.95 USD</p>
-                                            </div>
-                                        </div>
-                                        <div className="trans__orders_info__box_1">
-                                            <h5><span> Method</span></h5>
-                                            <p>Sell</p>
-                                            <p>Sell</p>
-                                            <p>Sell</p>
-                                        </div>
-                                   </div>
-                                   <h4><span>Total</span> Sell<br/> usd 168.85</h4>
-                               </div>
-                            
+                                 <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
+                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.lastSell)} <span>usd</span></h4>
+                                </div>
                             </div>
-                          
+                            <div className="transi__inner__box">
+                              
+                            </div>
                         </div>
                     </div>
               </div>

@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     bitcoinCash: {
         type: String,
     },
-    ethereum: {
+    ethereum: { 
         type: String,
     },
     zero_accountBalance: {

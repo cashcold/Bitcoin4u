@@ -1,0 +1,14 @@
+.activepassword{
+    
+    min-height: 60vh;
+    background-color:  #0b0d2c;
+    padding: 18em 0;
+}
+.activepassword span{
+    color: #f7931a;
+}
+
+@media screen and (max-width: 768px){
+   
+   
+}

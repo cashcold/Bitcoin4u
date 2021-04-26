@@ -73,7 +73,7 @@ class LoginMain extends Component {
                         </div>
                         <div className="log__btn">
                             <a href='' className='btn btn-warning' onClick={this.onSubmit}>Login</a>
-                            <a href='' className='btn btn-danger'>Forgot password</a>
+                            <a href='/forgotpassword' className='btn btn-danger'>Forgot password</a>
                         </div>
                     </div>
                 </section>

@@ -122,9 +122,19 @@ padding-top: 4em;
 }
 .transi__brand__color{
      background-color: #18192b;
+     padding: 2em 0;
 }
 .transi__brand__color_1{
      background-color: #2a2a2e;
+     padding: 2em 0;
+}
+.tran__box__all{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.transi__inner__box img{
+    width: 30px;
+    padding-right: 0.4em;
 }
 
 
@@ -197,5 +207,9 @@ padding-top: 4em;
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-gap: 2em;
+    }
+    .transi__inner__box img{
+        width: 20px;
+        padding-right: 0.4em;
     }
 }
