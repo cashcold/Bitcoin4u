@@ -115,7 +115,7 @@
         background-color: #1c1e3b;
        width: 100%;
        margin:  0 auto;
-       height: 40vh;
+       min-height: 40vh;
     }
     .both__confirm{
         display: grid;
@@ -127,7 +127,7 @@
         grid-area: other__section__confirm;
     }
     .confirm__buy__main{
-        padding: 18em 0;
+        padding: 12em 0;
         background-color: #0f112e;
         min-height: 100vh;
     }
@@ -138,6 +138,7 @@
    .planInfo_2{
        padding: 0 0.2em;
    }
+   
    
    
     

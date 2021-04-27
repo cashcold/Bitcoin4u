@@ -126,19 +126,53 @@ Router.post('/forgotpassword', async (req,res,next)=>{
  
      
  })
+ Router.post("/updateprofile/:id", async (req, res) => {
+    const salt = await bcrypt.genSalt(10)
+    const editPassword = await bcrypt.hash(req.body.password, salt)
+
+
+    const user = await User.findById(req.params.id);
+    if (req.body.full_name) {
+        user.full_name = req.body.full_name;
+    }
+    if (req.body.password) {
+        user.password = editPassword;
+    }
+    if (req.body.phone) {
+        user.phone = req.body.phone;
+    }
+    await user.save();
+    
+
+    const payload = {
+    user_id: user._id,
+    full_name: user.full_name,
+    email: user.email,
+    phone: user.phone,
+    password: user.password,
+    ip_address: user.ip_address,     
+    date: user.date
+}
+const RefreshToken = jwt.sign(payload, process.env.RefreshToken)
+res.header('RefreshToken', RefreshToken)
+res.send(RefreshToken)
+
+
+});
+
     Router.post('/editeProfil', async(req,res)=>{
         const salt = await bcrypt.genSalt(10)
         const editPassword = await bcrypt.hash(req.body.password, salt)
 
         
         const EditProfit = new User({
-            full_Name: req.body.full_Name,
+            full_name: req.body.full_name,
+            phone: req.body.phone,
             password: editPassword,
-            ethereum: req.body.ethereum,
-            bitcoinCash: req.body.bitcoinCash
         })
         
-        const user = await User.updateOne({full_Name: req.body.full_Name})
+        const user = await User.updateOne({full_Name: req.body.full_name})
+        const phone = await User.updateOne({phone: req.body.phone})
         const userPassword = await User.updateOne({password: EditProfit.password})
 
         

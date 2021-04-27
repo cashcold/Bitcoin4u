@@ -19,7 +19,6 @@
     grid-template-columns: 1fr 3.5fr;
 }
 .inner__box__1{
-    min-height: 100vh;
     background-color: #060826;
     min-height: 15vh;
 }
@@ -136,7 +135,14 @@ padding-top: 4em;
     width: 30px;
     padding-right: 0.4em;
 }
-
+/* .sapInner__box_1{
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+} */
+.inner__box__1 span{
+       color: #f7931a;
+}
 
 @media screen and (max-width: 768px){
     .das__box_1{
@@ -212,4 +218,23 @@ padding-top: 4em;
         width: 20px;
         padding-right: 0.4em;
     }
+    .das__box_1{
+    min-height: 100vh;
+    background-color: #060826;
+    min-height: 40vh;
+}
+.inner__box__1{
+    background-color: #060826;
+    min-height: 8vh;
+}
+.inner__box__2{
+    width: 100%;
+    min-height: 30vh;
+    background-color: #040731;
+    padding-top: 0.5em;
+}
+.dashboard__main{
+    padding: 8em 0;
+    min-height: 40vh;
+}
 }

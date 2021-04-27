@@ -19,6 +19,13 @@ class DashboardMain extends Component {
     }
 
     componentDidMount(){
+
+          const RefreshToken = sessionStorage.getItem('RefreshToken')
+        if(RefreshToken){
+            sessionStorage.removeItem('x-access-token')
+            sessionStorage.setItem('x-access-token',RefreshToken)
+        }
+
         const DropUserInfo = ()=>{
             const dropUserInfoBtn = document.querySelector('.dropUserInfo')
             const dashUser__box = document.querySelector('.dashUser__box')
@@ -59,8 +66,9 @@ class DashboardMain extends Component {
          axios.post('/users/sellBitcoinInfo',{id}).then(data => this.setState({
             sellTotal: data.data
          }))
-
     }
+
+  
     render() { 
    
         return ( 
@@ -76,10 +84,8 @@ class DashboardMain extends Component {
                                <li><a href=''><i class="fas fa-user fa-2x"></i> Dashboard </a></li>
                                <li><a href='/buy'><i class="fas fa-dollar-sign fa-2x"></i> Buy</a></li>
                                <li><a href='/sell'><i class="fas fa-dollar-sign fa-2x"></i> Sell</a></li>
-                               <li><a href=''><i class="fas fa-file-invoice-dollar fa-2x"></i> Manage Orders</a></li>
-                               <li><a href=''><i class="fas fa-file-signature fa-2x"></i> Manage Account</a></li>
-                               <li><a href=''><i class="fas fa-key fa-2x"></i> Manage Payment</a></li>
-                               <li><a href=''><i class="fas fa-hands-helping fa-2x"></i> Support Center</a></li>
+                               <li><a href='/editprofile'><i class="fas fa-file-signature fa-2x"></i> Manage Account</a></li>
+                               <li><a href='/contact-us'><i class="fas fa-hands-helping fa-2x"></i> Support Center</a></li>
                            </ul>
                        </div>
                     </div>
@@ -93,10 +99,8 @@ class DashboardMain extends Component {
                                 </div>
                                 <div className="dashUser__box">
                                     <ul>
-                                        <li><a href=''>Profile</a></li>
-                                        <li><a href=''>Support</a></li>
-                                        <li><a href=''>Lock</a></li>
-                                        <li><a href=''>Logout</a></li>
+                                        <li><a href='/editprofile'>Profile</a></li>
+                                        <li><a href='/contact-us'>Support</a></li>
                                     </ul>
                                 </div>
                            </div>
@@ -128,19 +132,19 @@ class DashboardMain extends Component {
                             <div className="transi__inner__box">
                                <div className="tran__box__all transi__brand__color">
                                  <h4><span>Total  <i class="fab fa-bitcoin fa-2x"></i></span> Buy</h4>
-                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/>{this.state.buyTotal.map(user => user.totalBuy)} <span>usd</span></h4>
+                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/>{this.state.buyTotal.map(user => user.totalBuy)}<span>$</span></h4>
                                  </div>
                                <div className="tran__box__all transi__brand__color_1">
                                  <h4><span>Total  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
-                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.totalSell)} <span>usd</span></h4>
+                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.totalSell)}<span>$</span></h4>
                                 </div>
                                  <div className="tran__box__all transi__brand__color">
                                  <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i></span> Buy</h4>
-                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.buyTotal.map(user => user.lastBuy)} <span>usd</span></h4>
+                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.buyTotal.map(user => user.lastBuy)}<span>$</span></h4>
                                </div>
                                <div className="tran__box__all transi__brand__color_1">
                                  <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
-                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.lastSell)} <span>usd</span></h4>
+                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.lastSell)}<span>$</span></h4>
                                 </div>
                             </div>
                             <div className="transi__inner__box">

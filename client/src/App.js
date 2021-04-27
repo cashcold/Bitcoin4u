@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import './App.css'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navbar from './Components/Navbar/navbar';
@@ -22,6 +22,7 @@ import SellMain from './Components/Sell/Sell/sell';
 import ConfirmSellMain from './Components/Sell/ConfirmSell/confirmSell';
 import ForgotPassword from './Components/Password/forgotpassword/forgotpassword';
 import ActivitPassword from './Components/Password/forgotpassword/Activepassword/activtpassword';
+import Settings from './Components/EditProfile/editprofile';
 
 class MainApp extends Component {
     constructor(props) {
@@ -47,6 +48,7 @@ class MainApp extends Component {
                               <Route path='/register' exact component={RegisterMain}/> 
                               <Route path='/forgotpassword' exact component={ForgotPassword}/>
                              <Route path='/activitPassword/:token' exact component={ActivitPassword}/> 
+                             <Route path='/editprofile' exact component={Settings}/> 
                               <Route path='/buy' exact component={BuyMain}/> 
                               <Route path='/confirmBuy' exact component={ConfirmBuyMain}/> 
                               <Route path='/sell' exact component={SellMain}/> 

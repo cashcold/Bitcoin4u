@@ -108,7 +108,7 @@ class ConfirmSellMain extends Component {
                                 </div>
                                 <div className='planInfo'>
                                     <p><span>Service Fees:</span></p>
-                                    <p>Not available</p>
+                                    <p>Free</p>
                                 </div>
 
                                 <div className='confirmBtnInfo'>

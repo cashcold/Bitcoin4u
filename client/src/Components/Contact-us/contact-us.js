@@ -16,8 +16,7 @@ class ContactMain extends Component {
                                 <div className='supportInfo'>
                                     <h1> <i class="fas fa-envelope-square fa-3x"></i></h1>
                                     <h4><span>OUR</span> E-MAIL</h4>
-                                    <p>payitforward.com</p>
-                                    <p>payitforward@gmail.com</p>
+                                    <p>bitcoinu4.gh@gmail.com</p>
                                 </div>
                             </div>
                             <div className='bothMenu bothMenuCount2' >

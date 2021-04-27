@@ -1,0 +1,50 @@
+
+.mainSettings{
+    min-height: 750px;
+    background-color:  #151733;
+    padding: 15em 0;
+}
+.mainSettings span{
+    color: #f7931a;
+}
+.settingNow h1{
+    padding-bottom: 1.5em;
+}
+.settingNow{
+    padding-top: 6em;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.settings{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.settings input{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .settings{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .mainSettings{
+        min-height: 750px;
+        background-color:  #151733;
+        padding: 9em 0;
+    }
+}
