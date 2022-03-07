@@ -51,7 +51,7 @@ class SellMain extends Component {
     render() { 
         const Check___usd = ()=>{
              if(this.state.usd){
-             document.querySelector('.innOut').innerHTML = "GHC " + this.state.usd * 5.8
+             document.querySelector('.innOut').innerHTML = "GHC " + this.state.usd * 7.00
          }
 
         }
@@ -86,11 +86,11 @@ class SellMain extends Component {
                             <p className='amount__to__pay'></p>
                         </div>
                         <div className="buyform">
-                            <p>Payment Phone Number</p>
+                            <p>Receiver Phone Number</p>
                             <input name='payment__number' onChange={this.handleChange('payment__number')}/>
                         </div>
                         <div className="buyform">
-                            <p>Payment Number Name</p>
+                            <p>Receiver Mobile Name</p>
                             <input name='payment__name' onChange={this.handleChange('payment__name')}/>
                         </div>
                         <div className="buyform">

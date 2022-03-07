@@ -76,7 +76,7 @@ class ConfirmBuyMain extends Component {
         console.log(this.state.date)
         const Check___usd = ()=>{
             if(this.state.usd){
-            document.querySelector('.outAmount').innerHTML = "GHC " + this.state.usd * 5.8
+            document.querySelector('.outAmount').innerHTML = "GHC " + this.state.usd * 7.06
         }
 
        }

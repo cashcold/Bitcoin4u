@@ -77,7 +77,7 @@ class ConfirmSellMain extends Component {
         console.log(this.state.date)
         const Check___usd = ()=>{
             if(this.state.usd){
-            document.querySelector('.outAmount').innerHTML = this.state.usd + " usd"
+            document.querySelector('.outAmount').innerHTML = this.state.usd * 0.000025 + " BTC"
         }
 
        }
@@ -99,11 +99,11 @@ class ConfirmSellMain extends Component {
                                     <p>USD {this.state.usd}</p>
                                 </div>
                                 <div className='planInfo'>
-                                    <p><span>Payment Phone Number:</span></p>
+                                    <p><span>Receiver Phone Number:</span></p>
                                     <p>{this.state.payment__number}</p>
                                 </div>
                                 <div className='planInfo'>
-                                    <p><span>Payment Number Name:</span></p>
+                                    <p><span>Receiver Mobile Name:</span></p>
                                     <p>{this.state.payment__name}</p>
                                 </div>
                                 <div className='planInfo'>

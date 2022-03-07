@@ -58,7 +58,7 @@ class Navbar extends Component {
             
         }
         return ( 
-            <div className=' navbarMain'>
+            <div className='navbarMain'>
                
                <section className='navMain'>
                    <nav>

@@ -51,7 +51,7 @@ class BuyMain extends Component {
     render() { 
         const Check___usd = ()=>{
              if(this.state.usd){
-             document.querySelector('.innOut').innerHTML = "GHC " + this.state.usd * 5.8
+             document.querySelector('.innOut').innerHTML = "GHC " + this.state.usd * 7.06
          }
 
         }

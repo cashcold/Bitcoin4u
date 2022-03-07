@@ -1,5 +1,5 @@
 const express = require('express')
-const cors = require('cors')
+const cors = require('cors') 
 const dotEnv = require('dotenv')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
