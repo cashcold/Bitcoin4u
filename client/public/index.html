@@ -40,56 +40,104 @@
    <script async src="https://s.fx-w.io/widgets/currency-converter/latest.js"></script>
    
    <script src="https://widgets.coingecko.com/coingecko-coin-price-chart-widget.js"></script>
-    <style>
-      
-    body{
-      
+   <style>
+  
+
+    .preloader {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #0C0F3D;
+        z-index: 99999999;
     }
+
+    #preloader-logo {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .loading-msg {
+        width: 100%;
+        font-size: 0.75em;
+        color: #555;
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        text-align: center;
+    }
+
+    .spinner {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #F7931A;
+        border-top: 3px solid #0C0F3D;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation: spin 1s infinite ease;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    #loading-msg {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 25px;
+        text-align: center;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #F7931A;
+        font-size: 0.8em;
+    }
+
    
-      .loader {
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid blue;
-        border-right: 16px solid green;
-        border-bottom: 16px solid red;
-        border-left: 16px solid pink;
-        width: 120px;
-        height: 120px;
-        -webkit-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-        position: absolute ;
-        left: 45%;
-        top: 20%;
-      }
-      
-      @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
-      }
-      
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      </style>
+</style>
   </head>
   <body >
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-      <div class="loader"></div>
-      
+        <div class="preloader">
+        <div class="spinner"></div>
+        <span id="loading-msg"></span>
+    </div>
+     
     </div>
 
    
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <script>
+      (function() {
+          var loaderText = document.getElementById("loading-msg");
+          var refreshIntervalId = setInterval(function() {
+              loaderText.innerHTML = getLoadingText();
+          }, 2500);
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+          function getLoadingText() {
+              var strLoadingText;
+              var arrLoadingText = ["Loading Page", "Bitcoin4U", "Buy and sell cryptocurrency","Dive into the future of finance", "the best price, with no hidden fees", "Trade confidently and conveniently in Ghana", "Get Blockchain wallet Address to Save Your Bitcoin.",
+                  "24 hour support Trading","Create your account. Individuals, companies, developers, institutions and investors are welcome" ,"Use Your User Credential To Login Dashboard.","Create your portfolio at the click of a button. Buy, sell and trade in 1 second!"
+              ];
+              var rand = Math.floor(Math.random() * arrLoadingText.length);
+              return arrLoadingText[rand];
+          }
+      })();
+  </script>
   </body>
 </html>
