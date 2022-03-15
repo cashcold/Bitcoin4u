@@ -95,7 +95,7 @@ class ConfirmBuyMain extends Component {
                                 <div className='lastConfirm'>
                                 <div className='planInfo planInfo_2'>
                                     <p><span>Recieving Address:</span></p>  
-                                    <p className='wallertAddress'>{this.state.walletAddress}</p>
+                                    <p className='wallertAddress'>{this.state.walletAddress}</p> 
                                 </div>
                                 <div className='planInfo'>
                                     <p><span>Buy Amount :</span></p>

@@ -55,7 +55,6 @@ class RegisterMain extends Component {
             date: this.state.date
             
         }
-       console.log(SaveNewUser)
 
        if(SaveNewUser.full_name.length < 6){
         toast.warn('Full Name  must be at lest 6')

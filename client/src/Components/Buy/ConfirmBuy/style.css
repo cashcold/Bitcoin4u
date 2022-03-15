@@ -138,6 +138,16 @@
    .planInfo_2{
        padding: 0 0.2em;
    }
+   .planInfo{
+    display: block;
+    justify-content: space-evenly;
+    margin: 2em 0em;
+}
+.planInfo p{
+    margin: -1em 0em;
+    /* padding: 0; */
+    
+}
    
    
    
