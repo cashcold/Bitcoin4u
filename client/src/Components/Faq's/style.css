@@ -26,3 +26,20 @@
 .faqs__box ul li{
     padding: 2em 0;
 }
+
+@media screen and (max-width: 768px){
+    .mainfaq__box{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 4em;
+        padding: 8em 0;
+    }
+    .faqs__box{
+    padding: 3em 0;
+    width: 95%;
+    margin: 0 auto;
+    min-height: 10vh;
+    background-color:#060826;
+    box-shadow: 0 5px  5px rgba(255, 196, 0, 0.5);
+}
+}

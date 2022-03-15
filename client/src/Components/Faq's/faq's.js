@@ -15,7 +15,7 @@ class FAQ_Main
                 </section>
                 <section className='mainfaq__box'>
                     <div className="faqs__box">
-                        <h1>Introduction of Digital Currencies</h1>
+                        <h1>Introduction of Digital<br/> Currencies</h1>
                         <ul>
                             <li><a href='/digitalcurrency'>1. What is Digital Currency ?</a></li>
                             <li><a href='/typedigitalcurrency'>2. Types of Digital Currencies.</a></li>
