@@ -106,7 +106,7 @@ class ConfirmBuyMain extends Component {
                                     <p>{this.state.payment__number}</p>
                                 </div>
                                 <div className='planInfo'>
-                                    <p><span>Payment Number Name:</span></p>
+                                    <p><span>Payment Number Name:</span> </p>
                                     <p>{this.state.payment__name}</p>
                                 </div>
                                 <div className='planInfo'>
