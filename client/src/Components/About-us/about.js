@@ -10,7 +10,7 @@ class AboutMain extends Component {
             <div className='about__main'>
                 <section className='aboutSection'>
                   <div className="about_head">
-                      <h1>Our <span>mission</span> is making buying<br/> and selling of <span>cryptocurrency</span><br/> fast and <span>secure.</span></h1>
+                      <h1 className='about_h1'>Our <span>mission</span> is making buying<br/> and selling of <span>cryptocurrency</span><br/> fast and <span>secure.</span></h1>
                       <p>Bitcoin4u is a Cryptocurrency dealer in Africa. Over the years we have developed mutual relationship with international partners to ensure constant availability of Cryptocurrencies at a good rate. We are also constantly monitoring the exchange market to set the most favorable rates. Our success is based on individual and fair approach. Our services are faster, better and trustworthy. No hidden fees, lowest rates ever, maximum reliability, live chat helpful support, and free instant SMS notification.</p>
                   </div>
                   <div className="about_head">

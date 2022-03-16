@@ -1,5 +1,6 @@
 .about__main{
-    padding: 20em;
+    padding: 15em 0em;
+    width: 100%;
     min-height: 100vh;
     background-color:#0C0F3D;
 }
@@ -19,4 +20,29 @@
 }
 .about_head{
     padding-bottom: 5em;
+} 
+.about_h1{
+    font-size: 1em;
+}
+
+
+
+@media screen and (max-width: 768px){
+    .about_h1{
+        font-size: 0.6em;
+    }
+    .about_head h1{
+        font-size: 2rem;
+    }
+    .about_head span{
+        font-weight: bold;
+        color: #f7931a;
+    }
+    .about__main{
+        padding: 14em 0em;
+        width: 100%;
+        min-height: 100vh;
+        background-color:#0C0F3D;
+    }
+ 
 }
