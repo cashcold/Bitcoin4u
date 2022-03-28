@@ -250,7 +250,7 @@ Router.post('/buyBitcoin', async(req,res)=>{
         full_name: req.body.full_name,
         usd: Number(req.body.usd),
         payment__number: Number(req.body.payment__number),
-        payment__name: req.body. payment__name,
+        payment__name: req.body.payment__name,
         walletAddress: req.body.walletAddress,
         email: req.body.email,
         date: req.body.date

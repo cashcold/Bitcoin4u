@@ -57,7 +57,7 @@ class ConfirmBuyMain extends Component {
             user_id: this.state.user_id,
             full_name: this.state.full_name,
             usd: this.state.usd,
-            payment__number: this.state.payment__number,
+            payment__number: Number(this.state.payment__number),
             payment__name: this.state.payment__name,
             email: this.state.email,
             date: this.state.date
@@ -66,14 +66,15 @@ class ConfirmBuyMain extends Component {
         // http://localhost:8000
         axios.post("/users/buyBitcoin/", BuyBitcoin).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
             window.location="/dashboard"
-        }),800).catch(err => {toast.error(err.response.data)}) 
+        }),1100).catch(err => {toast.error(err.response.data)}) 
 
        
     }
 
 
     render() { 
-        console.log(this.state.date)
+        const Recieving_BTC = this.state.usd * 0.000025
+
         const Check___usd = ()=>{
             if(this.state.usd){
             document.querySelector('.outAmount').innerHTML = "GHC " + this.state.usd * 7.06
@@ -82,6 +83,7 @@ class ConfirmBuyMain extends Component {
        }
      Check___usd()
         return ( 
+            
             <div className='confirm__buy__main'>
                 <section className='confirm__section__1'>
                     <ToastContainer/>
@@ -96,6 +98,10 @@ class ConfirmBuyMain extends Component {
                                 <div className='planInfo planInfo_2'>
                                     <p><span>Recieving Address:</span></p>  
                                     <p className='wallertAddress'>{this.state.walletAddress}</p> 
+                                </div>
+                                <div className='planInfo planInfo_2'>
+                                    <p><span>Recieving Bitcoin:</span></p>  
+                                    <p className='wallertAddress'>{Recieving_BTC}</p> 
                                 </div>
                                 <div className='planInfo'>
                                     <p><span>Buy Amount :</span></p>

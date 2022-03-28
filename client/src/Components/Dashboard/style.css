@@ -130,6 +130,11 @@ padding-top: 4em;
 .tran__box__all{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    margin: 2em 0em;
+    padding: 3em 0em;
+}
+.transi__inner__box{
+    padding: 2.5em 0em;
 }
 .transi__inner__box img{
     width: 30px;

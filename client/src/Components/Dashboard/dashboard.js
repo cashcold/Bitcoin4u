@@ -132,19 +132,19 @@ class DashboardMain extends Component {
                             <div className="transi__inner__box">
                                <div className="tran__box__all transi__brand__color">
                                  <h4><span>Total  <i class="fab fa-bitcoin fa-2x"></i></span> Buy</h4>
-                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/>{this.state.buyTotal.map(user => user.totalBuy)}<span>$</span></h4>
+                                <h4><span>$</span>{this.state.buyTotal.map(user => user.totalBuy)}<span></span></h4>
                                  </div>
                                <div className="tran__box__all transi__brand__color_1">
                                  <h4><span>Total  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
-                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.totalSell)}<span>$</span></h4>
+                                 <h4><span>$</span>{this.state.sellTotal.map(user => user.totalSell)}<span></span></h4>
                                 </div>
                                  <div className="tran__box__all transi__brand__color">
                                  <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i></span> Buy</h4>
-                                <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.buyTotal.map(user => user.lastBuy)}<span>$</span></h4>
+                                <h4><span>$</span>{this.state.buyTotal.map(user => user.lastBuy)}<span></span></h4>
                                </div>
                                <div className="tran__box__all transi__brand__color_1">
                                  <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
-                                 <h4><img src={require('../../images/illustration-usa-flag_53876-18165.jpg')}/> {this.state.sellTotal.map(user => user.lastSell)}<span>$</span></h4>
+                                 <h4><span>$</span>{this.state.sellTotal.map(user => user.lastSell)}<span></span></h4>
                                 </div>
                             </div>
                             <div className="transi__inner__box">
