@@ -146,14 +146,27 @@ class DashboardMain extends Component {
                                  <h4><span>Last  <i class="fab fa-bitcoin fa-2x"></i> </span> Sell</h4>
                                  <h4><span>$</span>{this.state.sellTotal.map(user => user.lastSell)}<span></span></h4>
                                 </div>
-                            </div>
+                            </div> 
                             <div className="transi__inner__box">
                               
                             </div>
                         </div>
                     </div>
               </div>
+              <section className='reffer__link'>
+                    <div className="refferNow">
+                        <div className="reff__box_1">
+                             {/* <i class="fas fa-users fa-10x"></i> */}
+                             <img src={require('../../images/referralthumb-min.d380e4bd.png')}/>
+                        </div>
+                        <div className="reff__box_2">
+                            <h2>Personal <span>Referral</span> Link:</h2>
+                            <p className='reffLink'>https://bitcoin4U/?ref={this.state.full_name}</p>
+                        </div>
+                    </div>
+                </section>
         </section>
+        
      </div>
          );
     }

@@ -137,6 +137,29 @@
 .homeNow{
     padding-top: 15em;
 }
+.refferMain{
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #0C0F3D;
+    padding: 5em 3em;
+    min-height: 100vh;
+}
+.reffer_box_1 h5{
+    width: 80%;
+    margin: 0 auto;
+   margin-top: 2em;
+   margin-bottom: 2em;
+   line-height: 2em;
+}
+.refferMain span{
+    color: #f7931a;
+}
+.reffer_me_box_1{
+    padding: 3em 0em;
+}
+
+
 
 
 @media screen and (max-width: 768px){
@@ -205,6 +228,21 @@
     }
     .homeNow{
         padding-top: 10em;
+    }
+    .refferMain{
+
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        background-color: #0C0F3D;
+        padding: 3em 1em;
+        min-height: 100vh;
+    }
+    .reffer_box_1 h5{
+        width: 95%;
+        margin: 0 auto;
+       margin-top: 2em;
+       margin-bottom: 2em;
+       line-height: 1.5em;
     }
     
 }

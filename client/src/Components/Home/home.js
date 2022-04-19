@@ -6,6 +6,11 @@ class HomeMain extends Component {
         this.state = {  }
     }
     componentDidMount(){
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        for(var pair of urlSearchParams.entries()) {
+            sessionStorage.setItem('reffer',(pair[0]+''+pair[1]) ) 
+         }
+
             
 
         const Typing = ()=>{
@@ -53,7 +58,7 @@ class HomeMain extends Component {
     }
     Typing()
      
-    }
+    } 
     render() { 
         return (
             <div className='home__main'>
@@ -61,7 +66,7 @@ class HomeMain extends Component {
                     <section className='homeNow'>
                     
                         <div className="home_1">
-                            <h1><span>Buy</span> and <span>sell</span> cryptocurrency<br/> the <span>best</span> price, with no <span>hidden</span> fees.</h1>
+                            <h1><span>Buy</span> and <span>sell</span> cryptocurrency,<br/> the <span>best</span> price, with no <span>hidden</span> fees.</h1>
                         </div>
                         <div className="home__text">
                             <p><span>Trade</span> confidently and conveniently in <span>Ghana</span> <br/>Get Blockchain <span>wallet</span> Address to Save Your Bitcoin.</p>
@@ -169,6 +174,16 @@ class HomeMain extends Component {
                                  <h3><span>MANY WAYS TO PAY</span></h3>
                                  <p>Pay using MTN MOBILE, Vodafone Cash, Airtel Money, TiGo Money, G-Money.</p>
                             </div>
+                        </div>
+                    </section>
+                    <section className="refferMain">
+                        <div className="reffer_box_1 reffer_me_box_1">
+                            <h1><span>REFERRAL</span> COMMISSION</h1>
+                            <h5>Our Referral Commission offers something useful and beneficial for everyone. We are confident that the Referral Commission from <span>Bitcoin4U provides 8Ghc</span> for one person register with your link and Buy or Sell, the right path to the career progression ladder, confidently leading to financial prosperity.</h5>
+                            <a href='/register' className='btn btn-success btc-lg'>Open Free Account</a>
+                        </div>
+                        <div className="reffer_box_1">
+                            <img src={require('../../images/referralthumb-min.d380e4bd.png')} alt="" />
                         </div>
                     </section>
                     <section className='contect__info'>
