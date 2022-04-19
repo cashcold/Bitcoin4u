@@ -19,7 +19,7 @@ class AboutMain extends Component {
                   </div>
                   <div className="about_head">
                       <h1><span>Our</span> Commitment</h1>
-                      <p>We're doing things differently. Buying and selling cryptocurrencies has been complex and exhausting for too long, we are committed to change that and make cryptocurrency trading worthwhile to everyone.</p>
+                      <p>We're doing things differently.Buying and selling cryptocurrencies has been complex and exhausting for too long, we are committed to change that and make cryptocurrency trading worthwhile to everyone.</p>
                   </div>
                   <div className="about_head">
                       <h1><span>Trans</span>parency</h1>
