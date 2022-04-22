@@ -18,6 +18,7 @@ class RegisterMain extends Component {
             ip_address: '',
             checkBox: '',
             date: '',
+            referral: '',
             restartLinkPassword: ''
          }
 
@@ -31,6 +32,12 @@ class RegisterMain extends Component {
     }
 
     componentDidMount(){
+
+        const  referral = localStorage.getItem('reffer')
+        this.setState({
+            referral
+        })
+
         const DateTime = new Date().toString()
         this.setState({
             date: DateTime
@@ -49,6 +56,7 @@ class RegisterMain extends Component {
             password: this.state.password,
             email: this.state.email,
             phone: this.state.phone,
+            referral: this.state.referral,
             ip_address: this.state.ip_address,
             checkBox: this.state.checkBox,
             confirm_password: this.state.confirm_password,
@@ -112,6 +120,7 @@ class RegisterMain extends Component {
                         </div>
                         <div className="log__btn">
                              <div className='upfont'>
+                                 <p> Referral:<br/> {this.state.referral} </p>
                                 <p><input type='radio' name='checkbox'  onChange={this.handleChange('checkBox')}/> I agree with Terms and conditions</p>
                                 <a href='' className='btn btn-warning' onClick={this.onSubmit}>CREATE ACCOUNT</a>
                              </div>

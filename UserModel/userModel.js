@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    referral: {
+        type: String,
+    },
     ip_address:{
         type: String,
         require: true

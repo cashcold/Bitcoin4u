@@ -28,10 +28,11 @@ Router.post('/register/', async(req,res)=>{
     const salt = await bcrypt.genSalt(10)
     const hashPassword = await bcrypt.hash(req.body.password, salt)
 
-    const saveUser = new User({
+    const saveUser = new User({ 
         full_name: req.body.full_name,
         password: hashPassword,
         email: req.body.email,
+        referral: req.body.referral,
         phone: Number(req.body.phone),
         ip_address: req.body.ip_address,
         date: req.body.date
