@@ -3,12 +3,14 @@
     padding: 11em 0em;
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    grid-column-gap: -3em;
     
     background-color: #0b0d31;
     min-height: 100vh;
 }
 .login__section_1{
- background-color: #23747A;   
+ background-color: #268188;
+ /* border-right-color: red; */
 }
 .login_section_2{
  background-color: #9a9cc2;   
