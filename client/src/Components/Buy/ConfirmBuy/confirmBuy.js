@@ -74,7 +74,7 @@ class ConfirmBuyMain extends Component {
 
     render() { 
         const Recieving_BTC = this.state.usd * 0.000025
-
+ 
         const Check___usd = ()=>{
             if(this.state.usd){
             document.querySelector('.outAmount').innerHTML = "GHC " + this.state.usd * 7.06

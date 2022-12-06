@@ -23,6 +23,7 @@ import ConfirmSellMain from './Components/Sell/ConfirmSell/confirmSell';
 import ForgotPassword from './Components/Password/forgotpassword/forgotpassword';
 import ActivitPassword from './Components/Password/forgotpassword/Activepassword/activtpassword';
 import Settings from './Components/EditProfile/editprofile';
+import WatchNotificationMain from './Components/watchNotification/watchNotification';
 
 class MainApp extends Component {
     constructor(props) {
@@ -58,6 +59,7 @@ class MainApp extends Component {
                               <Route path='/getcurrency' exact component={GetCurrency}/> 
                               <Route path='/whyRegister' exact component={WhyRegister}/> 
                               <Route path='/howtobuy' exact component={HowToBuy}/> 
+                              <Route path='/watch_notification' exact component={WatchNotificationMain}/> 
                            </Switch>
                         </div>
                         <Footer/>
