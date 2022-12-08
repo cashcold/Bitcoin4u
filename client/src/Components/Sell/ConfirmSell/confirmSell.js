@@ -4,6 +4,7 @@ import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
+import { io } from "socket.io-client";
 
 class ConfirmSellMain extends Component {
     constructor(props) {
@@ -53,7 +54,7 @@ class ConfirmSellMain extends Component {
 
     onSubmit = (event)=>{
         event.preventDefault()
-        const BuyBitcoin = {
+        const SellBuyBitcoin = {
             user_id: this.state.user_id,
             full_name: this.state.full_name,
             usd: this.state.usd,
@@ -63,9 +64,15 @@ class ConfirmSellMain extends Component {
             email: this.state.email,
             date: this.state.date
         }
-        console.log(BuyBitcoin)
+        console.log(SellBuyBitcoin)
+
+        let socket = io()
+
+        socket.emit('SellBuyBitcoin', SellBuyBitcoin)
+
+
         // http://localhost:8000
-        axios.post("/users/sellBitcoin/", BuyBitcoin).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
+        axios.post("/users/sellBitcoin/", SellBuyBitcoin).then(res => {toast.success("Transaction Successful")}).then(res => setTimeout(()=>{
             window.location="/dashboard"
         }),800).catch(err => {toast.error(err.response.data)})
 

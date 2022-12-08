@@ -1,4 +1,6 @@
 const express = require('express')
+const app = express()
+const server = require('http').createServer(app);
 const cors = require('cors') 
 const dotEnv = require('dotenv')
 const bodyParser = require('body-parser')
@@ -7,6 +9,12 @@ const userRouter = require('./Router/userRouter')
 const path = require('path')
 const cron = require("node-cron")
 const shell = require("shelljs")
+
+const io = require('socket.io')(server,{
+    cors: {
+        origin: "*",
+      }
+});
 
 dotEnv.config()
 
@@ -17,26 +25,37 @@ mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true },()=>{
 })
 const PORT = process.env.PORT || 8000
 
-const JungleServer = express()
-
-// cron.schedule("* * * * * *",()=>{
-//     console.log('TIME WORKING')
-// })
 
 
-JungleServer.use(cors())
-JungleServer.use(bodyParser.json())
+app.use(cors())
+app.use(bodyParser.json())
 
-JungleServer.use('/users',userRouter)
+io.on('connection', socket => {
+    
+
+    socket.on('BuyBitcoin', BuyBitcoin =>{
+        socket.broadcast.emit('BuyBitcoin', BuyBitcoin)
+    })
+    
+    socket.on('SellBuyBitcoin', SellBuyBitcoin =>{
+        socket.broadcast.emit('SellBuyBitcoin', SellBuyBitcoin)
+    })
+ 
+   
+ 
+ 
+});
+
+app.use('/users',userRouter)
 
 if(process.env.NODE_ENV === 'production'){
-    JungleServer.use(express.static("client/build"))
-    JungleServer.get('*',(req,res)=>{
+    app.use(express.static("client/build"))
+    app.get('*',(req,res)=>{
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
 
 
-JungleServer.listen(PORT,()=>{
+server.listen(PORT,()=>{
     console.log(`server is runing on local Port Number ${PORT}`)
 })

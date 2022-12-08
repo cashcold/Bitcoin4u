@@ -10,7 +10,7 @@ class WatchNotificationMain extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            live_deposit: ''
+            BuyBitcoin: ''
 
         }
         this.handleChange = this.handleChange.bind(this)
@@ -20,32 +20,20 @@ class WatchNotificationMain extends Component {
         this.setState({[input]:event.target.value })
     }
     componentDidMount(){
+
+
     
         let socket = io()
         // let socket = io('http://capitalgain.herokuapp.com/')
 
-        var  deposit_message = document.getElementById('deposit_message')
-             socket.on('incoming_deposit', live_deposit =>{
-               var li = document.createElement("li")
-               li.textContent =  live_deposit;
-               deposit_message.appendChild(li)
-               toast.success(live_deposit,{
-                position: "top-right",
-                autoClose: false,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                })
-         })
-           
+       
+    
          
-         socket.on('NewDeposit',NewDeposit =>{
+         socket.on('BuyBitcoin',BuyBitcoin =>{
             toast.success(
             <div className='New_Deposit_main'>
-                <h2>User {NewDeposit.user_Name}<br/>Have Made New Deposit of {NewDeposit.depositAmount}$<br/>
-                Time: {NewDeposit.date}
+                <h2>User {BuyBitcoin.full_name}<br/>Buying Bitcoin of  {BuyBitcoin.usd}$<br/>
+                Time: {BuyBitcoin.date}
                 </h2>
             </div>,{
                 position: "top-right",
@@ -57,14 +45,15 @@ class WatchNotificationMain extends Component {
                 progress: undefined,
                 })
          })
-         socket.on('Withdraw',Withdraw =>{
+   
+         socket.on('SellBuyBitcoin',SellBuyBitcoin =>{
             toast.info(
             <div className='New_Deposit_main'>
-                <h2>User {Withdraw.user_Name}<br/>Have Made New Withdraw of {Withdraw.activetDeposit}$<br/>
-                Time: {Withdraw.date}
+                <h2>User {SellBuyBitcoin.full_name}<br/>Selling Bitcoin of  {SellBuyBitcoin.usd}$<br/>
+                Time: {SellBuyBitcoin.date}
                 </h2>
             </div>,{
-                position: "top-left",
+                position: "top-right",
                 autoClose: false,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -73,11 +62,13 @@ class WatchNotificationMain extends Component {
                 progress: undefined,
                 })
          })
+   
   
         
     }
     render() { 
-    let socket = io('http://localhost:3000/')
+    let socket = io()
+    // let socket = io('http://localhost:8000/')
 
      return ( 
             <div className='watch_notifi_main'>
@@ -88,7 +79,13 @@ class WatchNotificationMain extends Component {
                     
                  </section>
                 <section>
+                    <ul  id="BuyBitcoin"></ul>
+                </section>
+                <section>
                     <ul  id="deposit_message"></ul>
+                </section>
+                <section>
+                    <ul  id="deposit_message_A"></ul>
                 </section>
                  {/* <section className="flow">
                      <input  name='live_deposit'  onChange={this.handleChange('live_deposit')}/>
