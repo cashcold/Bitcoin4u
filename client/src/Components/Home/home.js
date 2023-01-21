@@ -81,7 +81,7 @@ class HomeMain extends Component {
                                 <img src={require('../../images/mobile-money.jpg')}/>
                             </div>
                            <div className="pay">
-                               <h3><span>Download</span> App Now and Get <span>$5 Bonus</span> Bitcoin</h3>
+                               <h3><span>Download</span> App Now and Get <span>$10 Bonus</span> Bitcoin</h3>
                                  <img className='playLogo' src={require('../../images/e563d97183e6468f0f32f4a01c424e68.png')}/>
                             </div>
                            </div>

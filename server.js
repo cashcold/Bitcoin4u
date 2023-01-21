@@ -10,7 +10,7 @@ const path = require('path')
 const cron = require("node-cron")
 const shell = require("shelljs")
 
-const io = require('socket.io')(server,{
+const io = require('socket.io')(server,{ 
     cors: {
         origin: "*",
       }
