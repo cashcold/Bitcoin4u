@@ -40,7 +40,7 @@ class MainApp extends Component {
                         <Navbar/>
                         <div className='router'>
                            <Switch>
-                              <Route path='/' exact component={HomeMain}/> 
+                              <Route path='/' exact component={HomeMain}/>  
                               <Route path='/about-us' exact component={AboutMain}/> 
                               <Route path='/FAQS' exact component={FAQ_Main}/> 
                               <Route path='/contact-us' exact component={ContactMain}/> 

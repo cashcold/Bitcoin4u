@@ -70,7 +70,7 @@ class HomeMain extends Component {
                     
                         <div className="home_1">
                             <h1><span>Buy</span> and <span>sell</span> cryptocurrency,<br/> the <span>best</span> price, with no <span>hidden</span> fees.</h1>
-                        </div>
+                        </div> 
                         <div className="home__text">
                             <p><span>Trade</span> confidently and conveniently in <span>Ghana</span> <br/>Get Blockchain <span>wallet</span> Address to Save Your Bitcoin.</p>
                             <a href='' className='btn btn-getStart'>Get Started For Free</a>
