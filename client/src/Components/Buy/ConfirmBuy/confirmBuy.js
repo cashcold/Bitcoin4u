@@ -64,7 +64,7 @@ class ConfirmBuyMain extends Component {
             date: this.state.date
         }
         
-        let socket = io()
+        let socket = io('http://localhost:8000')
 
         socket.emit('BuyBitcoin', BuyBitcoin)
         

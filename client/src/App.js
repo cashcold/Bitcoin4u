@@ -37,7 +37,7 @@ class MainApp extends Component {
             <Router>
                 <div className=' mainApp animate__animated animate__zoomIn animate__slowerss'>
                     {/* <div  className='google__id' id="google_translate_element"></div> */}
-                        <Navbar/>
+                        <Navbar className='main_app_navbar'/>
                         <div className='router'>
                            <Switch>
                               <Route path='/' exact component={HomeMain}/>  
