@@ -23,7 +23,7 @@ class ContactMain extends Component {
                                 <div className='supportInfo'>
                                     <h1><i class="fas fa-phone fa-3x"></i></h1>
                                     <h4><span>PHONE</span> NUMBER </h4>
-                                    <p>+233241407522</p>
+                                    <p>+23353747790</p>
                                     <p>+233268253787</p>
                                 </div>
                             </div>
