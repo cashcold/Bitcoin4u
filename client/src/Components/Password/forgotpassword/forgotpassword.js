@@ -27,7 +27,7 @@ class ForgotPassword extends Component {
             return(toast.warning("Enter Email",{position: 'top-center'}))
         }    
 
-        axios.post ("/users/forgotpassword",saveRestartLinkPassword)
+        axios.post ("http://localhost:8000/users/forgotpassword",saveRestartLinkPassword)
         .then(res => (toast.success("Link have sent to email address")))
         .catch(err => (toast.error(err.response.data)))
 

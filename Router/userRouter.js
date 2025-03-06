@@ -184,50 +184,135 @@ Router.post('/login', async(req,res)=>{
     })
 })
 
-Router.post('/forgotpassword', async (req,res,next)=>{  
+Router.post('/forgotpassword', async (req, res, next) => {
     const userEmail = req.body.email;
     async.waterfall([
-       (done)=>{
-         crypto.randomBytes(20,(err,buffer)=>{
-             let token = buffer.toString('hex');
-             done(err, token);
-         })
-         
-       },
-       (token, done)=>{
-         User.findOne({email: req.body.email},(err,user)=>{
-             if(!user){
-                 return res.status(400).send('Email Not Found')
-             }
-             user.restartLinkPassword =  token;
-             user.save((err)=>{
-                 done(err, token, user)
-             })
-         })
-       },
-       (token,user,done)=>{
-        var mailgun = require('mailgun-js')({apiKey: process.env.API_key, domain: process.env.API_baseURL});
-        var data = {
-            from: 'Bitcoin4u <bitcoin4u.gh@gmail.com>',
-            to: userEmail,
-            subject: 'Password Reset',
-            html: ` <h1>Please Follow the link to restart your password </h1>
-                <p>${process.env.forgotPasswordLink}/${token}</p>
-            `
-        };
-         mailgun.messages().send(data, function (error, body) {
-             if(error){
-                 return res.status(400).send(error.message)
-             }
-            return res.status(200).send('Link sent to Email Address')
-       });
- 
-       },
-       
-    ])
- 
-     
- })
+        (done) => {
+            crypto.randomBytes(20, (err, buffer) => {
+                let token = buffer.toString('hex');
+                done(err, token);
+            });
+        },
+        (token, done) => {
+            User.findOne({ email: req.body.email }, (err, user) => {
+                if (!user) {
+                    return res.status(400).send('Email Not Found');
+                }
+                user.restartLinkPassword = token;
+                user.save((err) => {
+                    done(err, token, user);
+                });
+            });
+        },
+        (token, user, done) => {
+            // Configure Nodemailer for your new email hosting
+            const transporter = nodemailer.createTransport({
+                host: "mail.bitcoin4uonline.com",
+                port: 465, // Use 587 if TLS is needed
+                secure: true, // True for SSL
+                auth: {
+                    user: process.env.SMTP_USER,
+                    pass: process.env.SMTP_PASS,
+                },
+                tls: {
+                    rejectUnauthorized: false // Disable SSL/TLS verification
+                }
+            });
+
+            // Email options
+            const mailOptions = {
+                from: '"Bitcoin4U Support" <support@bitcoin4uonline.com>',
+                to: userEmail,
+                subject: 'Password Reset',
+                html: `<!DOCTYPE html>
+                    <html>
+                    <head>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                margin: 0;
+                                padding: 0;
+                                background-color: #f4f4f4;
+                            }
+                            .container {
+                                width: 100%;
+                                max-width: 600px;
+                                margin: 0 auto;
+                                background-color: #ffffff;
+                                padding: 20px;
+                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            }
+                            .header {
+                                text-align: center;
+                                padding: 10px 0;
+                                background-color: #007bff;
+                                color: #ffffff;
+                            }
+                            .content {
+                                padding: 20px;
+                            }
+                            .footer {
+                                text-align: center;
+                                padding: 10px 0;
+                                background-color: #007bff;
+                                color: #ffffff;
+                            }
+                            .social-icons {
+                                text-align: center;
+                                margin-top: 20px;
+                            }
+                            .social-icons img {
+                                width: 40px;
+                                margin: 0 10px;
+                            }
+                            @media (max-width: 600px) {
+                                .container {
+                                    padding: 10px;
+                                }
+                                .content {
+                                    padding: 10px;
+                                }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="container">
+                            <div class="header">
+                                <h1>Reset Your Password</h1>
+                            </div>
+                            <div class="content">
+                                <p>We received a request to reset your password. Click the button below to proceed:</p>
+                                <p style="text-align: center;"><a href="${process.env.forgotPasswordLink}/${token}" style="display: inline-block; background: #ff9800; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-size: 18px;">Reset Password</a></p>
+                                <p>If you did not request a password reset, please ignore this email.</p>
+                                <p>Visit our website: <a href="https://bitcoin4uonline.com">bitcoin4uonline.com</a></p>
+                            </div>
+                            <div class="social-icons">
+                                <a href="https://facebook.com/bitcoin4u"><img src="https://image.shutterstock.com/image-vector/facebook-icon-260nw-600469566.jpg" alt="Facebook"></a>
+                                <a href="https://twitter.com/bitcoin4u"><img src="https://image.shutterstock.com/image-vector/twitter-icon-260nw-600469567.jpg" alt="Twitter"></a>
+                                <a href="https://instagram.com/bitcoin4u"><img src="https://image.shutterstock.com/image-vector/instagram-icon-260nw-600469568.jpg" alt="Instagram"></a>
+                            </div>
+                            <div class="footer">
+                                <p>&copy; 2025 Bitcoin4U. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </body>
+                    </html>
+
+                `,
+            };
+
+            // Send email
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    return res.status(400).send(error.message);
+                }
+                return res.status(200).send('Link sent to Email Address');
+            });
+        }
+    ]);
+});
+
+
  Router.post("/updateprofile/:id", async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const editPassword = await bcrypt.hash(req.body.password, salt)
