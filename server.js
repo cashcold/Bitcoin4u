@@ -1,3 +1,4 @@
+// filepath: [server.js](http://_vscodecontentref_/1)
 const express = require('express')
 const app = express()
 const server = require('http').createServer(app);
@@ -19,14 +20,19 @@ const io = require('socket.io')(server, {
 
 dotEnv.config()
 
+mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    serverSelectionTimeoutMS: 5000 // Increase timeout to 5 seconds
+}).then(() => {
+    console.log('DataBase Connected Successful');
+}).catch((err) => {
+    console.error('DataBase Connection Error:', err);
+});
 
-
-mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true },()=>{
-    console.log('DataBase Connented Successful')
-})
 const PORT = process.env.PORT || 8000
-
-
 
 app.use(cors({
     origin: "http://localhost:3000" // Allow requests from the frontend
@@ -34,31 +40,24 @@ app.use(cors({
 app.use(bodyParser.json())
 
 io.on('connection', socket => {
-    
-
-    socket.on('BuyBitcoin', BuyBitcoin =>{
+    socket.on('BuyBitcoin', BuyBitcoin => {
         socket.broadcast.emit('BuyBitcoin', BuyBitcoin)
     })
     
-    socket.on('SellBuyBitcoin', SellBuyBitcoin =>{
+    socket.on('SellBuyBitcoin', SellBuyBitcoin => {
         socket.broadcast.emit('SellBuyBitcoin', SellBuyBitcoin)
     })
- 
-   
- 
- 
 });
 
-app.use('/users',userRouter)
+app.use('/users', userRouter)
 
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static("client/build"))
-    app.get('*',(req,res)=>{
+    app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
 }
 
-
-server.listen(PORT,()=>{
-    console.log(`server is runing on local Port Number ${PORT}`)
+server.listen(PORT, () => {
+    console.log(`server is running on local Port Number ${PORT}`)
 })

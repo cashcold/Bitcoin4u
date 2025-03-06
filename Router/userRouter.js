@@ -1,4 +1,5 @@
 const express = require('express')
+const nodemailer = require("nodemailer");
 const User = require('../UserModel/userModel')
 const UserDeposit = require('../UserModel/depositModel')
 const WithdrawDeposit = require('../UserModel/widthdraw')
@@ -15,47 +16,147 @@ dotEnv.config()
 
 const Router = express.Router()
 
-Router.post('/register/', async(req,res)=>{
+Router.post("/register/", async (req, res) => {
+    try {
+        // Check if the user already exists
+        const user = await User.findOne({ email: req.body.email });
+        if (user) return res.status(400).send("Email already exists");
 
-    
-    User.findOne({reffer : req.params})
-    // reffer program
+        // Validate and convert phone number
+        const phone = Number(req.body.phone);
+        if (isNaN(phone)) return res.status(400).send("Invalid phone number");
 
-    const user = await User.findOne({email: req.body.email})
-    if(user) return res.status(400).send('Email already Exist')
+        // Hash the password
+        const salt = await bcrypt.genSalt(10);
+        const hashPassword = await bcrypt.hash(req.body.password, salt);
 
+        // Create a new user instance
+        const saveUser = new User({
+            full_name: req.body.full_name,
+            password: hashPassword,
+            email: req.body.email,
+            referral: req.body.referral,
+            phone: phone,
+            ip_address: req.body.ip_address,
+            date: req.body.date,
+        });
 
-    const salt = await bcrypt.genSalt(10)
-    const hashPassword = await bcrypt.hash(req.body.password, salt)
+        // Save the user to the database
+        await saveUser.save();
 
-    const saveUser = new User({ 
-        full_name: req.body.full_name,
-        password: hashPassword,
-        email: req.body.email,
-        referral: req.body.referral,
-        phone: Number(req.body.phone),
-        ip_address: req.body.ip_address,
-        date: req.body.date
-    })
+        // Configure Nodemailer for your new email hosting
+        const transporter = nodemailer.createTransport({
+            host: "mail.bitcoin4uonline.com",
+            port: 465, // Use 587 if TLS is needed
+            secure: true, // True for SSL
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+            },
+            
+            tls: {
+                rejectUnauthorized: false // Disable SSL/TLS verification
+            }
+        });
 
-    var mailgun = require('mailgun-js')({apiKey: process.env.API_key, domain: process.env.API_baseURL});
-    var data = {
-        from: 'PayItForward <payitforwardisnvestmentlimited@gmail.com>',
-        to: 'frankainoo@gmail.com',
-        subject: 'Hello',
-        text: 'Thank you for making Bussiness with us, Have a nice day. Thank You'
-    };
-    mailgun.messages().send(data, function (error, body) {
-        console.log(body);
-    });
-  
+        // Email options
+        const mailOptions = {
+            from: '"Bitcoin4U Support" <support@bitcoin4uonline.com>',
+            to: req.body.email, // Send email to the registered user
+            subject: "Welcome to Bitcoin4U!",
+            html: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 0;
+                            background-color: #f4f4f4;
+                        }
+                        .container {
+                            width: 100%;
+                            max-width: 600px;
+                            margin: 0 auto;
+                            background-color: #ffffff;
+                            padding: 20px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        }
+                        .header {
+                            text-align: center;
+                            padding: 10px 0;
+                            background-color: #007bff;
+                            color: #ffffff;
+                        }
+                        .content {
+                            padding: 20px;
+                        }
+                        .footer {
+                            text-align: center;
+                            padding: 10px 0;
+                            background-color: #007bff;
+                            color: #ffffff;
+                        }
+                        .social-icons {
+                            text-align: center;
+                            margin-top: 20px;
+                        }
+                        .social-icons img {
+                            width: 40px;
+                            margin: 0 10px;
+                        }
+                        @media (max-width: 600px) {
+                            .container {
+                                padding: 10px;
+                            }
+                            .content {
+                                padding: 10px;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <h1>Welcome to Bitcoin4U!</h1>
+                        </div>
+                        <div class="content">
+                            <p>Hello ${req.body.full_name},</p>
+                            <p>Thank you for registering with Bitcoin4U! Your account has been successfully created.</p>
+                            <p>We buy and sell bitcoin with no hidden fees. We also offer rewards to users in many ways, such as our referral program and many others.</p>
+                            <p>Visit our website: <a href="https://bitcoin4uonline.com">bitcoin4uonline.com</a></p>
+                            <p>Best Regards,<br>Bitcoin4U Team</p>
+                        </div>
+                        <div class="social-icons">
+                            <a href="https://facebook.com/bitcoin4u"><img src="https://image.shutterstock.com/image-vector/facebook-icon-260nw-600469566.jpg" alt="Facebook"></a>
+                            <a href="https://twitter.com/bitcoin4u"><img src="https://image.shutterstock.com/image-vector/twitter-icon-260nw-600469567.jpg" alt="Twitter"></a>
+                            <a href="https://instagram.com/bitcoin4u"><img src="https://image.shutterstock.com/image-vector/instagram-icon-260nw-600469568.jpg" alt="Instagram"></a>
+                        </div>
+                        <div class="footer">
+                            <p>&copy; 2025 Bitcoin4U. All rights reserved.</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            `,
+        };
 
-    await saveUser.save()
-    res.send("user save")
+        // Send email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error("Email sending failed:", error);
+                return res.status(500).send("User registered but email not sent.");
+            }
+            console.log("Email sent:", info.response);
+        });
 
-})
-
-
+        res.send("User saved and email sent successfully.");
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).send("An error occurred.");
+    }
+});
 
 Router.post('/login', async(req,res)=>{
     const user = await User.findOne({email: req.body.email})

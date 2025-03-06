@@ -3,36 +3,37 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     full_name: {
         type: String,
-        require: true,
+        required: true, // Corrected 'require' to 'required'
     },
     password: {
         type: String,
-        require: true,
+        required: true, // Corrected 'require' to 'required'
     },
     phone: {
         type: Number,
-        require: true,
+        required: true, // Corrected 'require' to 'required'
     },
-    
     email: {
         type: String,
-        require: true,
+        required: true, // Corrected 'require' to 'required'
+        unique: true // Ensure email is unique
     },
     referral: {
         type: String,
     },
-    ip_address:{
+    ip_address: {
         type: String,
-        require: true
+        required: true // Corrected 'require' to 'required'
     },
-    restartLinkPassword:{
+    restartLinkPassword: {
         type: String,
     },
     date: {
-        
+        type: Date,
+        default: Date.now // Set default value to current date
     }
-})
+});
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
