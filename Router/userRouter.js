@@ -436,6 +436,7 @@ Router.post('/buyBitcoin', async(req,res)=>{
         user_id: req.body.user_id,
         full_name: req.body.full_name,
         usd: Number(req.body.usd),
+        ghc: Number(req.body.ghc),
         payment__number: Number(req.body.payment__number),
         payment__name: req.body.payment__name,
         walletAddress: req.body.walletAddress,

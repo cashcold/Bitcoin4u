@@ -14,6 +14,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
+   ghc: {
+        
+        type: Number,
+        require: true,
+    },
     payment__number: {
         
         type: Number,
