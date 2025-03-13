@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import './watchNotification.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
@@ -8,7 +9,8 @@ class WatchNotificationMain extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            BuyBitcoin: ''
+            BuyBitcoin: '',
+            bitcoinBuy: []
         };
     }
 
@@ -25,6 +27,14 @@ class WatchNotificationMain extends Component {
     };
 
     componentDidMount() {
+
+        axios.get('http://localhost:8000/users/last-bitcoinBuy')
+        .then(response => {
+          this.setState({ bitcoinBuy: response.data });
+        })
+        .catch(error => console.error('Error fetching bitcoinBuy:', error));
+
+
         const socket = io('http://localhost:8000', {
             reconnection: true,
             reconnectionAttempts: 10,
@@ -72,6 +82,25 @@ class WatchNotificationMain extends Component {
                 <ToastContainer />
                 <section className="watch_not">
                     <h1>WE ARE ABOUT TO WATCH THE NOTIFICATION!!!</h1>
+                    <section class="displayBothTrans">
+                        <section class="displayNewBitcoinBuy">
+                            <h2>Recent Bitcoin Buy</h2>
+                            {this.state.bitcoinBuy.map((bitcoinBuy, index) => (
+                            
+                            
+                                <div className="recent-users-container user-info">
+                                    {/* <img src={`https://robohash.org/${bitcoinBuy.user}`} alt="User Avatar" /> */}
+                                    <h3>{bitcoinBuy.full_name}</h3>
+                                    <p>Amount: ${bitcoinBuy.usd} in ghc{bitcoinBuy.ghc}</p>
+                                    <p>Method: <span class="bitcoinColour">Bitcoin</span> </p>
+                                    <p><span class="dateColor">Deposit</span> Date: {new Date(bitcoinBuy.date).toLocaleString()}</p>
+                                </div>
+                                
+                            ))}
+                        </section>
+                    </section>
+
+                    
                 </section>
                 <section>
                     <ul id="BuyBitcoin"></ul>

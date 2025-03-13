@@ -449,6 +449,16 @@ Router.post('/buyBitcoin', async(req,res)=>{
     res.send(".........Waiting for BlockChain confirm to credit your Dashboard")
 })
 
+Router.get('/last-bitcoinBuy', async (req, res) => {
+    try {
+        const bitcoinBuy = await BuyBitcoin.find().sort({ createdAt: -1 }).limit(20);
+        res.json(bitcoinBuy);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+  });
+
 Router.post('/sellBitcoin', async(req,res)=>{
     
     const SellBitcoinNow = new SellBitcoin({
@@ -466,6 +476,8 @@ Router.post('/sellBitcoin', async(req,res)=>{
     await SellBitcoinNow.save()
     res.send(".........Waiting for BlockChain confirm to credit your Dashboard")
 })
+
+
 
 
 
