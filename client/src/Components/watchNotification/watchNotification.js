@@ -34,7 +34,7 @@ class WatchNotificationMain extends Component {
         socket.on('BuyBitcoin', BuyBitcoin => {
             toast.success(
                 <div className='New_Deposit_main'>
-                    <h4>User {BuyBitcoin.full_name}<br />Buying Bitcoin of {BuyBitcoin.usd}$<br />
+                    <h4>User {BuyBitcoin.full_name}<br />Buying Bitcoin of ${BuyBitcoin.usd} and in GHC{BuyBitcoin.ghc}<br />
                         Time: {BuyBitcoin.date}
                     </h4>
                 </div>, {
@@ -51,7 +51,7 @@ class WatchNotificationMain extends Component {
         socket.on('SellBuyBitcoin', SellBuyBitcoin => {
             toast.info(
                 <div className='New_Deposit_main'>
-                    <h4>User {SellBuyBitcoin.full_name}<br />Selling Bitcoin of {SellBuyBitcoin.usd}$<br />
+                    <h4>User {SellBuyBitcoin.full_name}<br />Selling Bitcoin of ${SellBuyBitcoin.usd} and in GHC{SellBuyBitcoin.ghc}<br />
                         Time: {SellBuyBitcoin.date}
                     </h4>
                 </div>, {
