@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 import './watchNotification.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
@@ -10,7 +10,8 @@ class WatchNotificationMain extends Component {
         super(props);
         this.state = {
             BuyBitcoin: '',
-            bitcoinBuy: []
+            bitcoinBuy: [],
+            bitcoinSell: []
         };
     }
 
@@ -26,14 +27,28 @@ class WatchNotificationMain extends Component {
             .catch((error) => console.error('Error playing sound:', error));
     };
 
-    componentDidMount() {
-
+    fetchBitcoinBuys = () => {
         axios.get('http://localhost:8000/users/last-bitcoinBuy')
-        .then(response => {
-          this.setState({ bitcoinBuy: response.data });
-        })
-        .catch(error => console.error('Error fetching bitcoinBuy:', error));
+            .then(response => {
+                this.setState({ bitcoinBuy: response.data });
+            })
+            .catch(error => console.error('Error fetching bitcoinBuy:', error));
+    };
 
+    fetchBitcoinSell = () => {
+        axios.get('http://localhost:8000/users/last-bitcoinSell')
+            .then(response => {
+                this.setState({ bitcoinSell: response.data });
+            })
+            .catch(error => console.error('Error fetching bitcoinSell:', error));
+    };
+
+    componentDidMount() {
+        this.fetchBitcoinBuys();
+        this.fetchBitcoinSell();
+
+        this.interval = setInterval(this.fetchBitcoinBuys, 3000);
+        this.interval = setInterval(this.fetchBitcoinSell, 3000);
 
         const socket = io('http://localhost:8000', {
             reconnection: true,
@@ -76,31 +91,44 @@ class WatchNotificationMain extends Component {
         });
     }
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     render() {
         return (
             <div className='watch_notifi_main'>
                 <ToastContainer />
                 <section className="watch_not">
-                    <h1>WE ARE ABOUT TO WATCH THE NOTIFICATION!!!</h1>
-                    <section class="displayBothTrans">
-                        <section class="displayNewBitcoinBuy">
-                            <h2>Recent Bitcoin Buy</h2>
-                            {this.state.bitcoinBuy.map((bitcoinBuy, index) => (
-                            
-                            
-                                <div className="recent-users-container user-info">
-                                    {/* <img src={`https://robohash.org/${bitcoinBuy.user}`} alt="User Avatar" /> */}
-                                    <h3>{bitcoinBuy.full_name}</h3>
-                                    <p>Amount: ${bitcoinBuy.usd} in ghc{bitcoinBuy.ghc}</p>
-                                    <p>Method: <span class="bitcoinColour">Bitcoin</span> </p>
-                                    <p><span class="dateColor">Deposit</span> Date: {new Date(bitcoinBuy.date).toLocaleString()}</p>
+                    <h1> WATCH THE NOTIFICATION!!!</h1>
+                    <section className="displayBothTrans">
+                        <section className="displayNewBitcoinSell">
+                            <h2>Recent Bitcoin Sells</h2>
+                            {this.state.bitcoinSell.map((bitcoinSell, index) => (
+                                <div key={index} className="card">
+                                    <div className="card-body">
+                                        <h3 className="card-title">{bitcoinSell.full_name}</h3>
+                                        <p className="card-text">Amount: ${bitcoinSell.usd} in GHC{bitcoinSell.ghc}</p>
+                                        <p className="card-text">Method: <span className="bitcoinColour">Bitcoin</span></p>
+                                        <p className="card-text"><span className="dateColor">Deposit</span> Date: {new Date(bitcoinSell.date).toLocaleString()}</p>
+                                    </div>
                                 </div>
-                                
+                            ))}
+                        </section>
+                        <section className="displayNewBitcoinBuy">
+                            <h2>Recent Bitcoin Buys</h2>
+                            {this.state.bitcoinBuy.map((bitcoinBuy, index) => (
+                                <div key={index} className="card">
+                                    <div className="card-body">
+                                        <h3 className="card-title">{bitcoinBuy.full_name}</h3>
+                                        <p className="card-text">Amount: ${bitcoinBuy.usd} in GHC{bitcoinBuy.ghc}</p>
+                                        <p className="card-text">Method: <span className="bitcoinColour">Bitcoin</span></p>
+                                        <p className="card-text"><span className="">Deposit</span> Date: {new Date(bitcoinBuy.date).toLocaleString()}</p>
+                                    </div>
+                                </div>
                             ))}
                         </section>
                     </section>
-
-                    
                 </section>
                 <section>
                     <ul id="BuyBitcoin"></ul>

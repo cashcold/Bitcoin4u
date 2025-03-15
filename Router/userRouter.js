@@ -430,28 +430,41 @@ Router.post('/sellBitcoinInfo',async(req,res)=>{
 
 
 
-Router.post('/buyBitcoin', async(req,res)=>{
-    
-    const BuyBitcoinNow = new BuyBitcoin({
-        user_id: req.body.user_id,
-        full_name: req.body.full_name,
-        usd: Number(req.body.usd),
-        ghc: Number(req.body.ghc),
-        payment__number: Number(req.body.payment__number),
-        payment__name: req.body.payment__name,
-        walletAddress: req.body.walletAddress,
-        email: req.body.email,
-        date: req.body.date
 
-    })
+Router.post('/buyBitcoin', async (req, res) => {
+    try {
+        const BuyBitcoinNow = new BuyBitcoin({
+            user_id: req.body.user_id,
+            full_name: req.body.full_name,
+            usd: Number(req.body.usd),
+            ghc: Number(req.body.ghc),
+            payment__number: Number(req.body.payment__number),
+            payment__name: req.body.payment__name,
+            walletAddress: req.body.walletAddress,
+            email: req.body.email,
+            date: req.body.date
+        });
 
-    await BuyBitcoinNow.save()
-    res.send(".........Waiting for BlockChain confirm to credit your Dashboard")
-})
+        await BuyBitcoinNow.save();
+        res.send(".........Waiting for BlockChain confirm to credit your Dashboard");
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+});     
 
 Router.get('/last-bitcoinBuy', async (req, res) => {
     try {
         const bitcoinBuy = await BuyBitcoin.find().sort({ createdAt: -1 }).limit(20);
+        res.json(bitcoinBuy);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
+    }
+  });
+Router.get('/last-bitcoinSell', async (req, res) => {
+    try {
+        const bitcoinBuy = await SellBitcoin.find().sort({ createdAt: -1 }).limit(20);
         res.json(bitcoinBuy);
     } catch (error) {
         console.error(error);
