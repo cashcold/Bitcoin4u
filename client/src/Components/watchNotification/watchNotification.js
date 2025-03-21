@@ -110,7 +110,7 @@ class WatchNotificationMain extends Component {
                                         <h3 className="card-title">{bitcoinSell.full_name}</h3>
                                         <p className="card-text">Amount: ${bitcoinSell.usd} in GHC{bitcoinSell.ghc}</p>
                                         <p className="card-text">Method: <span className="bitcoinColour">Bitcoin</span></p>
-                                        <p className="card-text"><span className="dateColor">Deposit</span> Date: {new Date(bitcoinSell.date).toLocaleString()}</p>
+                                        <p className="card-text"><span className="">Deposit</span> Date: {new Date(bitcoinSell.date).toLocaleString()}</p>
                                     </div>
                                 </div>
                             ))}
