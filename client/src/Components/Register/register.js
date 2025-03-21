@@ -87,7 +87,7 @@ class RegisterMain extends Component {
         }
        axios.post("/users/register/",SaveNewUser).then(res => {toast.success("Register Successful")}).then(res => setTimeout(()=>{
             window.location="/login"
-        }),8000).catch(err => {toast.error(err.response.data)})
+        }),5000).catch(err => {toast.error(err.response.data)})
 
     }
 

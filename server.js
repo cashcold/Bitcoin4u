@@ -36,7 +36,8 @@ mongoose.connect(process.env.MONGODB_URI, {
 const PORT = process.env.PORT || 8000
 
 app.use(cors({
-    origin: "http://localhost:3000" // Allow requests from the frontend
+    origin: "https://bitcoin4uonline.com",
+    methods: ["GET", "POST"],
 }));
 app.use(bodyParser.json())
 
