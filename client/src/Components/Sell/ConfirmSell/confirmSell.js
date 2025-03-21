@@ -19,6 +19,7 @@ class ConfirmSellMain extends Component {
             full_name: '',
             email: '',
             date: '',
+            dateNow: '',
         };
         this.handleChange = this.handleChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
