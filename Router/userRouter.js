@@ -395,22 +395,40 @@ res.send(RefreshToken)
 
 
 
-Router.post('/buyBitcoinInfo',async(req,res)=>{
-   
-    user_id = req.body.id
-    const user = await BuyBitcoin.findOne({user_id: req.body.id})
+Router.post('/buyBitcoinInfo', async (req, res) => {
+    try {
+        const user_id = req.body.id;
 
-    if(user){
+        // Validate the input
+        if (!user_id) {
+            return res.status(400).send("User ID is required");
+        }
+
+        // Check if the user exists in the BuyBitcoin collection
+        const user = await BuyBitcoin.findOne({ user_id });
+        if (!user) {
+            return res.status(404).send("No Bitcoin purchase information found for this user");
+        }
+
+        // Aggregate data for the specific user
         const currentDeposit = await BuyBitcoin.aggregate([
-            { $match : { }},
-            {$group: {_id: "$user_id", totalBuy: { $sum: "$usd" },lastBuy: { $last: "$usd" }}},
-            
-        ])
-    res.send(currentDeposit)
+            { $match: { user_id } }, // Filter by user_id
+            {
+                $group: {
+                    _id: "$user_id",
+                    totalBuy: { $sum: "$usd" },
+                    lastBuy: { $last: "$usd" },
+                },
+            },
+        ]);
+
+        // Send the aggregated data as a response
+        res.status(200).send(currentDeposit);
+    } catch (error) {
+        console.error("Error in /buyBitcoinInfo route:", error);
+        res.status(500).send("An error occurred while fetching Bitcoin purchase information");
     }
-    
-    
-})
+});
 Router.post('/sellBitcoinInfo',async(req,res)=>{
    
     user_id = req.body.id
