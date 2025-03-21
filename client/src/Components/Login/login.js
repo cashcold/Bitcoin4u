@@ -43,7 +43,7 @@ class LoginMain extends Component {
             return false;
         }
 
-        axios.post( "http://localhost:8000/users/login",userLogin).then(res => {  
+        axios.post( "/users/login",userLogin).then(res => {  
             sessionStorage.setItem('x-access-token',JSON.stringify(res.data))
             return res.data;
         }).then(res => {toast.success("Login Successful !", setTimeout(()=>{
@@ -65,7 +65,7 @@ class LoginMain extends Component {
                         <h3>with your Bitcoin4u Account</h3>
                         <div className="login__forms">
                             <div className='myForms'>
-                                <input type='email' name='name' placeholder='Email'  name='email' placeholder='Email' onChange={this.handleChange('email')}/>
+                                <input type='email' name='name' placeholder='Email' onChange={this.handleChange('email')}/>
                             </div>
                             <div className='myForms'>
                                  <input type='password' name='password' placeholder='Password'  onChange={this.handleChange('password')} />
