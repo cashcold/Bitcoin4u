@@ -429,22 +429,42 @@ Router.post('/buyBitcoinInfo', async (req, res) => {
         res.status(500).send("An error occurred while fetching Bitcoin purchase information");
     }
 });
-Router.post('/sellBitcoinInfo',async(req,res)=>{
-   
-    user_id = req.body.id
-    const user = await SellBitcoin.findOne({user_id: req.body.id})
 
-    if(user){
+
+Router.post('/sellBitcoinInfo', async (req, res) => {
+    try {
+        const user_id = req.body.id;
+
+        // Validate the input
+        if (!user_id) {
+            return res.status(400).send("User ID is required");
+        }
+
+        // Check if the user exists in the SellBitcoin collection
+        const user = await SellBitcoin.findOne({ user_id });
+        if (!user) {
+            return res.status(404).send("No Bitcoin sell information found for this user");
+        }
+
+        // Aggregate data for the specific user
         const currentDeposit = await SellBitcoin.aggregate([
-            { $match : { }},
-            {$group: {_id: "$user_id", totalSell: { $sum: "$usd" },lastSell: { $last: "$usd" }}},
-            
-        ])
-    res.send(currentDeposit)
+            { $match: { user_id } }, // Filter by user_id
+            {
+                $group: {
+                    _id: "$user_id",
+                    totalSell: { $sum: "$usd" },
+                    lastSell: { $last: "$usd" },
+                },
+            },
+        ]);
+
+        // Send the aggregated data as a response
+        res.status(200).send(currentDeposit);
+    } catch (error) {
+        console.error("Error in /sellBitcoinInfo route:", error);
+        res.status(500).send("An error occurred while fetching Bitcoin sell information");
     }
-    
-    
-})
+});
 
 
 
