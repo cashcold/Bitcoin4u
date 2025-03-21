@@ -239,9 +239,10 @@ Router.post('/forgotpassword', async (req, res) => {
         // Send email
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                console.error("Error sending email:", error);
+                console.error("Error sending email:", error); // Log the error
                 return res.status(500).send("Failed to send email");
             }
+            console.log("Email sent successfully:", info.response); // Log success
             res.status(200).send("Password reset link sent to your email");
         });
     } catch (error) {
