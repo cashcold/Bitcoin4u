@@ -73,7 +73,7 @@ class HomeMain extends Component {
                         </div> 
                         <div className="home__text">
                             <p><span>Trade</span> confidently and conveniently in <span>Ghana</span> <br/>Get Blockchain <span>wallet</span> Address to Save Your Bitcoin.</p>
-                            <a href='/login' className='btn btn-warning btn-getStart'>Login </a>
+                            <a href='/login' className='btn  btn-getStart'>Login </a>
                             <a href='/register' className='btn btn-getStart'>Get Started For Free</a>
                         </div>
                         <div className="playstore">
