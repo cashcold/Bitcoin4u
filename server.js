@@ -13,7 +13,7 @@ const shell = require("shelljs")
 
 const io = require('socket.io')(server, { 
     cors: {
-        origin: "/", // Restrict to your frontend
+        origin: "http://localhost:3000", // Restrict to your frontend
         methods: ["GET", "POST"]
     }
 });
