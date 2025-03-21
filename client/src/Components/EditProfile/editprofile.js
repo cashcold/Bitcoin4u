@@ -58,7 +58,7 @@ class Settings extends Component {
         }
         console.log(EditProfil)
         console.log(this.state.user_id)
-        axios.post( `http://localhost:8000/users/updateprofile/${this.state.user_id}`,EditProfil).then(res => { 
+        axios.post( `/users/updateprofile/${this.state.user_id}`,EditProfil).then(res => { 
             sessionStorage.setItem('RefreshToken',JSON.stringify(res.data))
             return res.data;
         }).then(toast.success(" Update Successful")).then( setTimeout(()=>{

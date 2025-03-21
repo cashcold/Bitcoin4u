@@ -66,11 +66,11 @@ class ConfirmBuyMain extends Component {
             date: this.state.date
         };
 
-        let socket = io('http://localhost:8000');
+        let socket = io('.');
 
         socket.emit('BuyBitcoin', BuyBitcoin);
 
-        axios.post("http://localhost:8000/users/buyBitcoin/", BuyBitcoin)
+        axios.post("/users/buyBitcoin/", BuyBitcoin)
             .then(res => {
                 toast.success("Transaction Successful");
                 setTimeout(() => {

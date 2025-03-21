@@ -28,7 +28,7 @@ class WatchNotificationMain extends Component {
     };
 
     fetchBitcoinBuys = () => {
-        axios.get('http://localhost:8000/users/last-bitcoinBuy')
+        axios.get('/users/last-bitcoinBuy') // Removed "http://localhost:8000"
             .then(response => {
                 this.setState({ bitcoinBuy: response.data });
             })
@@ -36,7 +36,7 @@ class WatchNotificationMain extends Component {
     };
 
     fetchBitcoinSell = () => {
-        axios.get('http://localhost:8000/users/last-bitcoinSell')
+        axios.get('/users/last-bitcoinSell') // Removed "http://localhost:8000"
             .then(response => {
                 this.setState({ bitcoinSell: response.data });
             })
@@ -47,10 +47,10 @@ class WatchNotificationMain extends Component {
         this.fetchBitcoinBuys();
         this.fetchBitcoinSell();
 
-        this.interval = setInterval(this.fetchBitcoinBuys, 3000);
-        this.interval = setInterval(this.fetchBitcoinSell, 3000);
+        this.buyInterval = setInterval(this.fetchBitcoinBuys, 3000);
+        this.sellInterval = setInterval(this.fetchBitcoinSell, 3000);
 
-        const socket = io('http://localhost:8000', {
+        const socket = io('/', { // Removed "http://localhost:8000"
             reconnection: true,
             reconnectionAttempts: 10,
             reconnectionDelay: 500
@@ -92,7 +92,8 @@ class WatchNotificationMain extends Component {
     }
 
     componentWillUnmount() {
-        clearInterval(this.interval);
+        clearInterval(this.buyInterval);
+        clearInterval(this.sellInterval);
     }
 
     render() {

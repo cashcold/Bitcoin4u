@@ -85,7 +85,7 @@ class RegisterMain extends Component {
             toast.warn('Please agree with Terms and conditions')
             return false
         }
-       axios.post("http://localhost:8000/users/register/",SaveNewUser).then(res => {toast.success("Register Successful")}).then(res => setTimeout(()=>{
+       axios.post("/users/register/",SaveNewUser).then(res => {toast.success("Register Successful")}).then(res => setTimeout(()=>{
             window.location="/login"
         }),8000).catch(err => {toast.error(err.response.data)})
 
