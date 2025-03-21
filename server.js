@@ -37,7 +37,7 @@ const PORT = process.env.PORT || 8000
 
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ["https://bitcoin4uonline.com", "http://localhost:3000"];
+        const allowedOrigins = ["/", "http://localhost:3000"];
         if (allowedOrigins.includes(origin) || !origin) {
             callback(null, true);
         } else {
