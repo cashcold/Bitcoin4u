@@ -85,7 +85,7 @@ class ConfirmSellMain extends Component {
     };
 
     render() {
-        const Recieving_BTC = this.state.usd * 0.000025;
+        const Recieving_BTC = this.state.usd * 0.000012;
 
         return (
             <div className='confirm__buy__main'>
