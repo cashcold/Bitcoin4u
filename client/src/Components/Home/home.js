@@ -73,8 +73,9 @@ class HomeMain extends Component {
                         </div> 
                         <div className="home__text">
                             <p><span>Trade</span> confidently and conveniently in <span>Ghana</span> <br/>Get Blockchain <span>wallet</span> Address to Save Your Bitcoin.</p>
-                            <a href='/login' className='btn  btn-getStart'>Login </a>
-                            <a href='/register' className='btn btn-getStart'>Get Started For Free</a>
+                            <a href='/login' className="btn btn-warning btn-primary btn-lg px-4 py-2 my-2" >Login </a>
+                            {/* <a href='/register' className='btn btn-getStart'>Get Started For Free</a> */}
+                            <a href='/register' className='btn btn-success btn-primary btn-lg px-4 py-2 '>Open Free Account</a>
                         </div>
                         <div className="playstore">
                             <div className="payment_method">
@@ -184,7 +185,7 @@ class HomeMain extends Component {
                         <div className="reffer_box_1 reffer_me_box_1">
                             <h1><span>REFERRAL</span> COMMISSION</h1>
                             <h5>Our Referral Commission offers something useful and beneficial for everyone. We are confident that the Referral Commission from <span>Bitcoin4U provides 8Ghc</span> for one person register with your link and Buy or Sell, the right path to the career progression ladder, confidently leading to financial prosperity.</h5>
-                            <a href='/register' className='btn btn-success btc-lg'>Open Free Account</a>
+                            <a href='/register' className='btn btn-success btn-primary btn-lg px-5 py-3 my-3'>Open Free Account</a>
                         </div>
                         <div className="reffer_box_1">
                             <img src={require('../../images/referralthumb-min.d380e4bd.png')} alt="" />
