@@ -104,7 +104,7 @@ class ConfirmSellMain extends Component {
                                         {/* <p className='wallertAddress'>{this.state.walletAddress}</p> */}
                                     </div>
                                     <div className='planInfo planInfo_2'>
-                                        <p><span>Recieving Bitcoin:</span></p>
+                                        <p><span>Sending Bitcoin:</span></p>
                                         <p className='wallertAddress'>{Recieving_BTC}</p>
                                     </div>
                                     <div className='planInfo'>
@@ -124,7 +124,7 @@ class ConfirmSellMain extends Component {
                                         <p>Free</p>
                                     </div>
                                     <div className='confirmBtnInfo'>
-                                        <p>Please you will get exactly <span className='outAmount'>{this.state.ghc}</span> GHC to<br />
+                                        <p>Please you will get exactly <span className='outAmount'>{this.state.ghc}</span> GHC to Momo Number {this.state.payment__number} and Payment Name {this.state.payment__name} <br />
                                           
                                         </p>
                                     </div>

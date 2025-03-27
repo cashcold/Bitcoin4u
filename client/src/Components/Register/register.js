@@ -103,7 +103,7 @@ class RegisterMain extends Component {
                         <form onSubmit={this.onSubmit}>
                             <div className="login__forms">
                                 <div className='myForms'>
-                                    <input type='text' name='fullName' placeholder='Full Name' onChange={this.handleChange('full_name')} />
+                                    <input type='text' name='fullName' placeholder='User Name' onChange={this.handleChange('full_name')} />
                                 </div>
                                 <div className='myForms'>
                                     <input type='email' name='email' placeholder='Email' onChange={this.handleChange('email')} />

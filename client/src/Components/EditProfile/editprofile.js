@@ -78,7 +78,7 @@ class Settings extends Component {
                         <ToastContainer/>
                         <hr/>
                         <div className='settings'>
-                            <p>Your Full Name:</p>
+                            <p>User Name:</p>
                             <p><input name='full_name'  onChange={this.handleChange('full_name')} placeholder={this.state.full_name}/></p>
                         </div>
                         <hr/>

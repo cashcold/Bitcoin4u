@@ -16,15 +16,15 @@ class ContactMain extends Component {
                                 <div className='supportInfo'>
                                     <h1> <i class="fas fa-envelope-square fa-3x"></i></h1>
                                     <h4><span>OUR</span> E-MAIL</h4>
-                                    <p>bitcoinu4.gh@gmail.com</p>
+                                    <p>support@bitcoin4uonline.com</p>
                                 </div>
                             </div>
                             <div className='bothMenu bothMenuCount2' >
                                 <div className='supportInfo'>
                                     <h1><i class="fas fa-phone fa-3x"></i></h1>
                                     <h4><span>PHONE</span> NUMBER </h4>
-                                    <p>+23353747790</p>
                                     <p>+233268253787</p>
+                                    <p>+23353747790</p>
                                 </div>
                             </div>
                             <div className='bothMenu bothMenuCount3'>
@@ -32,7 +32,7 @@ class ContactMain extends Component {
                                 <h1><i class="fas fa-address-card fa-3x"></i></h1>
                                     <h4><span>ADDRESS</span> LINE</h4>
                                     <p>City: Accra Tema</p>
-                                    <p> Tema Comm. 10 SOS, 114 Apple avneu</p>
+                                    <p> OPP. SUPPER ,THE CHRIST MIRACLES CHURCH INTL.</p>
                                 </div>
                             </div>  
                         </div>
