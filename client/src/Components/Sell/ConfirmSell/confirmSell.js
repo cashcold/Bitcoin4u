@@ -100,7 +100,7 @@ class ConfirmSellMain extends Component {
                                 <div className='lastConfirm'>
                                     <div className='planInfo planInfo_2'>
                                         <p><span>Recieving Address:</span></p>
-                                        <p className='wallertAddress'>bc1q2z4teaqk2g3nl2qwpn2pz700errsqkg06g8lqu</p>
+                                        <p className='wallertAddress'>bc1qrukzylvvwcy4vjd9f57wfzny8yhqyx7rjxs0m2</p>
                                         {/* <p className='wallertAddress'>{this.state.walletAddress}</p> */}
                                     </div>
                                     <div className='planInfo planInfo_2'>
